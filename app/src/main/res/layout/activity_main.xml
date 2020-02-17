@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:text="Toogle Dark Mode"
+        android:id="@+id/btnDarkMode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:visibility="gone"
+        android:text="Error! Your device manufacturer fucked up!"
+        android:id="@+id/tvErrorMsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/btnDarkMode"
+        app:layout_constraintStart_toStartOf="@+id/btnDarkMode"
+        app:layout_constraintTop_toBottomOf="@+id/btnDarkMode" />
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/tvSuccessMsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Success! No more fucking your eyes"
+        app:layout_constraintEnd_toEndOf="@+id/btnDarkMode"
+        app:layout_constraintStart_toStartOf="@+id/btnDarkMode"
+        app:layout_constraintTop_toBottomOf="@+id/tvErrorMsg" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
