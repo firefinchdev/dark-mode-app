@@ -10,11 +10,20 @@
     <string name="night">Night</string>
     <string name="more_apps">More apps</string>
     <string name="rate_this_app">Rate this app</string>
+    <string name="rate_app">Rate this App</string>
+    <string name="rate_later">Later</string>
+    <string name="rate_never">Never</string>
+    <string name="rate_us">Rate us</string>
+    <string name="terms_amp_conditions"><![CDATA[TERMS & CONDITIONS]]></string>
+    <string name="rateUs">Please Rate us on Play Store</string>
+    <string name="send_feedback">Please send the feedback using E-Mail. We\'ll work on it!</string>
     <string name="share_with_friends">Share with friends</string>
-    <string name="contact_us">Contact us</string>
+    <string name="feedback">Feedback</string>
     <string name="faaq">Faq</string>
     <string name="privacy_policy">Privacy Policy</string>
+    <string name="open_source">OPEN SOURCE</string>
     <string name="about_us">About us</string>
+    <string name="connect_with_us">Connect with us</string>
     <string name="more_info">Click here for more information.</string>
     <string name="sw_info1">You switched to auto mode.</string>
     <string name="sw_info2">You switched to day mode.</string>
@@ -37,4 +46,5 @@
     <string name="info7">Dark Mode is enabled. What next?</string>
     <string name="info8">Now that the dark mode is enabled, you will have several benefits:</string>
     <string name="info9">Your battery lasts longer.</string>
+    <string name="other_apps">Other apps</string>
 </resources>

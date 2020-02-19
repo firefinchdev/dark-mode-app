@@ -3,31 +3,31 @@
     xmlns:aapt="http://schemas.android.com/aapt"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/nav_menu1"
+        android:id="@+id/nav_more_apps"
         android:icon="@drawable/moreapps"
         android:title="@string/more_apps" />
     <item
-        android:id="@+id/nav_menu2"
+        android:id="@+id/nav_rate_app"
         android:icon="@drawable/ratetheapp"
         android:title="@string/rate_this_app" />
     <item
-        android:id="@+id/nav_menu3"
+        android:id="@+id/nav_share"
         android:icon="@drawable/shareapp"
         android:title="@string/share_with_friends" />
     <item
-        android:id="@+id/nav_menu4"
+        android:id="@+id/nav_feedback"
         android:icon="@drawable/contactus"
-        android:title="@string/contact_us" />
+        android:title="@string/feedback" />
     <item
-        android:id="@+id/nav_menu5"
+        android:id="@+id/nav_faq"
         android:icon="@drawable/note"
         android:title="@string/faaq" />
     <item
-        android:id="@+id/nav_menu6"
+        android:id="@+id/nav_privacypolicy"
         android:icon="@drawable/privacypolicy"
         android:title="@string/privacy_policy" />
     <item
-        android:id="@+id/nav_menu7"
+        android:id="@+id/nav_about_us"
         android:icon="@drawable/aboutus"
         android:title="@string/about_us" />
 </menu>

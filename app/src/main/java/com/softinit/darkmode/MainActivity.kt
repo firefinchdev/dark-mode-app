@@ -1,6 +1,7 @@
 package com.softinit.darkmode
 
 import android.app.UiModeManager
+import android.content.Intent
 import android.content.res.Configuration
 import android.content.res.Configuration.*
 import androidx.appcompat.app.AppCompatActivity
@@ -9,6 +10,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatDelegate.*
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.header_view.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -18,6 +20,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        initiateLayout()
         /*uiModeManager = getSystemService(UI_MODE_SERVICE) as UiModeManager
 
         btnDarkMode.setOnClickListener {
@@ -32,6 +35,21 @@ class MainActivity : AppCompatActivity() {
             }
             showError()
         }*/
+    }
+
+    fun initiateLayout(){
+        nav_view.setNavigationItemSelectedListener {item ->
+            when(item.itemId){
+                R.id.nav_more_apps -> Utils.openDevPage(this)
+                R.id.nav_rate_app -> AppRatingDialog.getDialog(this, false).show()
+                R.id.nav_share -> startActivity(Utils.share(this))
+                R.id.nav_feedback -> Utils.sendFeedback(this)
+//                R.id.nav_faq -> //awd
+                R.id.nav_privacypolicy -> Utils.openBrowser(this,"")
+                R.id.nav_about_us -> startActivity(Intent(this, AboutActivity::class.java))
+            }
+            true
+        }
     }
 
   /*  override fun onConfigurationChanged(newConfig: Configuration) {
