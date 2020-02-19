@@ -45,7 +45,7 @@
                     android:textColor="@color/headingTextColor"
                     android:textSize="26sp" />
                 <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/menuItem"
+                    android:id="@+id/ivFaq"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:layout_constraintBottom_toBottomOf="@id/ivIconMenu"

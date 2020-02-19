@@ -11,8 +11,11 @@
         android:theme="@style/AppTheme">
         <activity
             android:theme="@style/AppTheme.NoActionBar"
+            android:name=".FaqActivity"/>
+        <activity
             android:name=".MainActivity"
-            android:configChanges="uiMode">
+            android:configChanges="uiMode"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,8 +23,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:theme="@style/AppTheme.NoActionBar"
-            android:name=".AboutActivity" />
+            android:name=".AboutActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

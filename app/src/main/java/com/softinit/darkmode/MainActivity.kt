@@ -44,11 +44,14 @@ class MainActivity : AppCompatActivity() {
                 R.id.nav_rate_app -> AppRatingDialog.getDialog(this, false).show()
                 R.id.nav_share -> startActivity(Utils.share(this))
                 R.id.nav_feedback -> Utils.sendFeedback(this)
-//                R.id.nav_faq -> //awd
+                R.id.nav_faq -> startActivity(Intent(this,FaqActivity::class.java))
                 R.id.nav_privacypolicy -> Utils.openBrowser(this,"")
                 R.id.nav_about_us -> startActivity(Intent(this, AboutActivity::class.java))
             }
             true
+        }
+        ivFaq.setOnClickListener {
+            startActivity(Intent(this,FaqActivity::class.java))
         }
     }
 

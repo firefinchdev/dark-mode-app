@@ -47,4 +47,16 @@
     <string name="info8">Now that the dark mode is enabled, you will have several benefits:</string>
     <string name="info9">Your battery lasts longer.</string>
     <string name="other_apps">Other apps</string>
+    <string name="faq_description">Frequently Asked Questions(FAQ) for the Dark Mode App.</string>
+    <string name="faq_title">FAQ - Dark Mode</string>
+    <string name="updating_miui_error_ques">Updating from MIUI 10 to 11 breaks dark mode. What went wrong?</string>
+    <string name="samsung_galaxy_error_ques">My Samsung Galaxy keeps switching back to day mode. What can I do?</string>
+    <string name="app_not_working_ques">This app does not work on my phone. What went wrong?</string>
+    <string name="app_not_supported_ques">Why is app XYZ not supported?</string>
+    <string name="which_apps_supported_ques">Which apps are supported?</string>
+    <string name="instagram_error_ques">The dark mode is active but Instagram stays light. Why is that?</string>
+    <string name="want_light_mode_back_ques">I uninstalled the app, but my phone stays dark. How can I get the light mode back?</string>
+    <string name="dark_mode_turnedoff_ques">The dark mode is turned off after some time. Why is that?</string>
+    <string name="auto_mode_ques">What is the Auto mode and how does it work?</string>
+    <string name="remove_ads_ques">No one likes ads. Why do you show them, and how can I remove them?</string>
 </resources>
