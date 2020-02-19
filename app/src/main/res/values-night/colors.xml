@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorAccent">#ffffff</color>
+
+    <color name="colorPrimary">#27263a</color>
+    <color name="colorPrimaryDark">#27263a</color>
+
+    <color name="cardViewBg">#27263a</color>
+    <color name="bg">#353147</color>
+    <color name="headerViewBg">#27263a</color>
+    <color name="selectedTxtColor">#ffffff</color>
+    <color name="unselectedTxtColor">#96969f</color>
+    <color name="selectedBgColor">#5e9ff8</color>
+    <color name="unselectedBgColor">#4f486e</color>
+    <color name="menuText">@color/colorAccent</color>
+    <color name="headingTextColor">#ffffff</color>
+    <color name="switchColor">#5e9ff8</color>
+</resources>

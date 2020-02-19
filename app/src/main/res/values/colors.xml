@@ -1,6 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorPrimary">#ffffff</color>
+    <color name="colorPrimaryDark">#ffffff</color>
+    <color name="colorAccent">#3e3a53</color>
+
+    <color name="textWhite">@color/colorPrimary</color>
+    <color name="statusAccent">#f7f8fb</color>
+    <color name="rateTxt">@color/colorAccent</color>
+    <color name="btn3">#ffffff</color>
+    <color name="info_col">#ff9359</color>
+
+
+    <color name="txtCol">#96969f</color>
+    <color name="txtDark">#96969f</color>
+    <color name="white">#ffffff</color>
+    <color name="red">#ec5c62</color>
+
+
+    <color name="menu_text_color">#051535</color>
+    <color name="supported_apps_color">#9ba1ac</color>
+    <color name="jambali">#4f486e</color>
+
+    <color name="headingTextColor">#3e3a53</color>
+    <color name="cardViewBg">#F5F5F9</color>
+    <color name="bg">#f3f3f8</color>
+    <color name="headerViewBg">#ffffff</color>
+    <color name="selectedTxtColor">#ffffff</color>
+    <color name="unselectedTxtColor">#96969f</color>
+    <color name="selectedBgColor">#ff9359</color>
+    <color name="unselectedBgColor">#ffffff</color>
+    <color name="menuIcon">#96969f</color>
+    <color name="menuText">#353147</color>
+    <color name="switchColor">#ff9359</color>
+    <color name="switchStroke">#c3c3cd</color>
+    <color name="txtGray">#96969f</color>
 </resources>

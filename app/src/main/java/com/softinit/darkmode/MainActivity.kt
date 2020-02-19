@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        uiModeManager = getSystemService(UI_MODE_SERVICE) as UiModeManager
+        /*uiModeManager = getSystemService(UI_MODE_SERVICE) as UiModeManager
 
         btnDarkMode.setOnClickListener {
             uiModeManager.nightMode = when (getCurrentNightMode()){
@@ -31,10 +31,10 @@ class MainActivity : AppCompatActivity() {
                 }
             }
             showError()
-        }
+        }*/
     }
 
-    override fun onConfigurationChanged(newConfig: Configuration) {
+  /*  override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)
         when (newConfig.uiMode and UI_MODE_NIGHT_MASK) {
             UI_MODE_NIGHT_YES -> showSuccess()
@@ -70,12 +70,13 @@ class MainActivity : AppCompatActivity() {
             UI_MODE_NIGHT_UNDEFINED -> NightMode.UNKNOWN
             else -> NightMode.UNKNOWN
         }
-    }
+    }*/
 }
 
+/*
 sealed class NightMode {
     object YES: NightMode()
     object NO: NightMode()
     object AUTO: NightMode()
     object UNKNOWN: NightMode()
-}
+}*/
