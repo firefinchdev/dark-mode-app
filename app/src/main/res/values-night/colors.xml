@@ -5,8 +5,9 @@
     <color name="colorPrimary">#27263a</color>
     <color name="colorPrimaryDark">#27263a</color>
 
-    <color name="cardViewBg">#27263a</color>
-    <color name="bg">#353147</color>
+    <color name="titleTextColor">#ffffff</color>
+    <color name="appBg">#27263a</color>
+    <color name="cardViewBg">#353147</color>
     <color name="headerViewBg">#27263a</color>
     <color name="selectedTxtColor">#ffffff</color>
     <color name="unselectedTxtColor">#96969f</color>
