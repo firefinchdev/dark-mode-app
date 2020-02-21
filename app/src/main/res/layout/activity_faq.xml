@@ -19,6 +19,8 @@
             android:id="@+id/ic_back"
             android:layout_width="56dp"
             android:layout_height="56dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
             android:scaleType="center"
             android:src="@drawable/arrow_back" />
 

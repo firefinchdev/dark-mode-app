@@ -17,6 +17,9 @@ object FaqData {
         listDataHeader.add(context.getString(R.string.want_light_mode_back_ques))
         listDataHeader.add(context.getString(R.string.dark_mode_turnedoff_ques))
         listDataHeader.add(context.getString(R.string.auto_mode_ques))
+        listDataHeader.add(context.getString(R.string.app_behaviour_weird_ques))
+        listDataHeader.add(context.getString(R.string.app_orange_tint_ques))
+        listDataHeader.add(context.getString(R.string.updated_android_ques))
         listDataHeader.add(context.getString(R.string.remove_ads_ques))
         return listDataHeader
     }
@@ -39,8 +42,15 @@ object FaqData {
         hashMap[listDataHeader[7]] = listOf("\n\t\t\t\t\t<p>There are multiple possibilities:</p>\n\t\t\t\t\t<ul>\n\t\t\t\t\t\t<li>You have selected \"Auto\" rather than \"Night Mode\". \"Auto\" may look dark at first, but it actually toggles the mode automatically depending on the current time: dark at night, light by day.</li>\n\t\t\t\t\t\t<li>The mode was turned off by another app that is overwriting the Android dark mode settings.</li>\n\t\t\t\t\t\t<li>The mode was turned off by whoever used your phone while you weren't looking. \uD83D\uDE48</li>\n\t\t\t\t\t</ul>")
         hashMap[listDataHeader[8]] = listOf("\n\t\t\t\t\t<p>The Auto mode enables the night mode in the evening and the day mode in the morning.</p>\n\t\t\t\t\t<p>Unfortunately, some phone manufacturers changed or removed this behavior in their customized android versions.</p>\n\t\t\t\t\t<p> In case the auto mode does not work on your device, your phone manufacturer has probably disabled this mode.</p>")
         // To be added at runtime
-        hashMap[listDataHeader[9]] = listOf("\n\t\t\t\t\t<p>I don't like ads either, but unfortunately, I cannot afford working on this app for several hours a day – without earning any money.</p>\n\t\t\t\t\t<p>Any support is much appreciated! ❤️</p>")
+        hashMap[listDataHeader[12]] = listOf("\n\t\t\t\t\t<p>I don't like ads either, but unfortunately, I cannot afford working on this app for several hours a day – without earning any money.</p>\n\t\t\t\t\t<p>Any support is much appreciated! ❤️</p>")
         hashMap[listDataHeader[6]] = listOf("\t\t\t\t\t<ol>\n\t\t\t\t\t\t<li>Install the app again.</li>\n\t\t\t\t\t\t<li>Select light mode.</li>\n\t\t\t\t\t\t<li>Uninstall the app again.</li>\n\t\t\t\t\t</ol>")
+        hashMap[listDataHeader[9]] = listOf("<p>The Dark Mode app allows you to switch between the dark and light theme of your apps. These themes are provided by the apps themselves.\n\n\nIf an app \"looks weird\" after switching to dark mode, then that's because\n\t\t\t<ul>\t\t\t<li>that's how the app was intended to look by its developers, or</li>\n\t\t\t<li>the developers of the app made a mistake when adding the dark theme to their app.</li></ul>\n\n\nIf you think the developers made a mistake, I'd recommend contacting them. Perhaps they are already working on fixing the issue. \uD83D\uDE0A</p>")
+        hashMap[listDataHeader[10]] = listOf("<p>This is due to a (mis-)configuration by your phone manufacturer. Usually, switching to dark mode only affects your apps, but not your screen. Some manufacturers however couple switching to dark mode with dimming and tinting your screen. Presumably, this is done to reduce eye strain from blue light in the evening.</p>")
+        hashMap[listDataHeader[11]] = listOf("<p>Your phone manufacturer has disabled the Android dark mode functionality in the new update.\n" +
+                "\n" +
+                "Unfortunately, there is nothing the app can do to enable the dark mode again once it has been disabled.\n" +
+                "\n" +
+                "I am really sorry for the inconvenience. I wish could help. \uD83D\uDE14</p>")
         return hashMap
     }
 }

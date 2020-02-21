@@ -2,6 +2,7 @@ package com.softinit.darkmode
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import kotlinx.android.synthetic.main.activity_faq.*
 
 class FaqActivity : AppCompatActivity() {
@@ -18,5 +19,8 @@ class FaqActivity : AppCompatActivity() {
             hashMap
         )
         lvFaq.setAdapter(faqDetailsAdapter)
+        ic_back.setOnClickListener {
+            finish()
+        }
     }
 }

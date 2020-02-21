@@ -59,4 +59,7 @@
     <string name="dark_mode_turnedoff_ques">The dark mode is turned off after some time. Why is that?</string>
     <string name="auto_mode_ques">What is the Auto mode and how does it work?</string>
     <string name="remove_ads_ques">No one likes ads. Why do you show them, and how can I remove them?</string>
+    <string name="app_behaviour_weird_ques">App XYZ looks weird since activating the dark mode. What went wrong?</string>
+    <string name="app_orange_tint_ques">My screen has an orange tint since activating the dark mode. Why is that?</string>
+    <string name="updated_android_ques">I updated Android, but I cannot change the mode anymore. Why is that?</string>
 </resources>
