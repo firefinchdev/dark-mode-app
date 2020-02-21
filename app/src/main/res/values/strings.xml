@@ -28,6 +28,7 @@
     <string name="sw_info1">You switched to auto mode.</string>
     <string name="sw_info2">You switched to day mode.</string>
     <string name="sw_info3">You switched to night mode.</string>
+    <string name="sw_info4">Your phone does not support the Android dark mode</string>
     <string name="app_share">Try Dark Mode for your Phone &amp; HD Amoled Wallpaper �� \10\10 Dark Mode Support All Social Media Apps ✨��</string>
     <string name="dm_info1">In some cases, phone manufacturers have added a dark mode toggle into the system settings.</string>
     <string name="dm_info2">The Desk Mode can be activated by placing the phone in a desk dock.</string>
@@ -62,4 +63,15 @@
     <string name="app_behaviour_weird_ques">App XYZ looks weird since activating the dark mode. What went wrong?</string>
     <string name="app_orange_tint_ques">My screen has an orange tint since activating the dark mode. Why is that?</string>
     <string name="updated_android_ques">I updated Android, but I cannot change the mode anymore. Why is that?</string>
+    <string name="no">1.</string>
+    <string name="nu">2.</string>
+    <string name="num">3.</string>
+    <string name="not_work">Something does not work?</string>
+    <string name="faq">FAQ</string>
+    <string name="fq">Learn more about this and similar issues in the FAQ.</string>
+    <string name="setting">Give it a try and check your system settings:</string>
+    <string name="info_for_o">Possible location on Android 8 (Oreo)</string>
+    <string name="info_for_p">Possible location on Android 9 (Pie)</string>
+    <string name="info_for_t">Possible location on Android 10</string>
+    <string name="open_settings">Open Settings</string>
 </resources>

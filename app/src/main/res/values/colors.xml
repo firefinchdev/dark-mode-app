@@ -286,11 +286,10 @@
     <color name="headerViewBg">#ffffff</color>
     <color name="selectedTxtColor">#ffffff</color>
     <color name="unselectedTxtColor">#96969f</color>
-    <color name="selectedBgColor">#ff9359</color>
     <color name="unselectedBgColor">#ffffff</color>
     <color name="menuIcon">#96969f</color>
     <color name="menuText">#353147</color>
-    <color name="switchColor">#ff9359</color>
+    <color name="switchBgColor">#ff9359</color>
     <color name="switchStroke">#c3c3cd</color>
     <color name="txtGray">#96969f</color>
     <color name="red">#ec5c62</color>

@@ -11,19 +11,35 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatDelegate.*
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.header_view.*
+import kotlinx.android.synthetic.main.main_view.*
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var uiModeManager: UiModeManager
+    val NIGHT_MODE = 1
+    val NO_NIGHT_MODE = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         initiateLayout()
-        /*uiModeManager = getSystemService(UI_MODE_SERVICE) as UiModeManager
+        uiModeManager = getSystemService(UI_MODE_SERVICE) as UiModeManager
+        when (isUsingNightModeResources()) {
+            NightMode.NO -> {
+                btnDay.isSelected = true
+                btnNight.isSelected = false
+            }
+            NightMode.YES -> {
+                btnNight.isSelected = true
+                btnDay.isSelected = false
+            }
+            NightMode.UNKNOWN -> {
+                showError()
+            }
+        }
 
-        btnDarkMode.setOnClickListener {
+        /*btnDarkMode.setOnClickListener {
             uiModeManager.nightMode = when (getCurrentNightMode()){
                 NightMode.NO -> UiModeManager.MODE_NIGHT_YES
                 NightMode.YES -> UiModeManager.MODE_NIGHT_NO
@@ -55,7 +71,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-  /*  override fun onConfigurationChanged(newConfig: Configuration) {
+    override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)
         when (newConfig.uiMode and UI_MODE_NIGHT_MASK) {
             UI_MODE_NIGHT_YES -> showSuccess()
@@ -66,13 +82,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showSuccess() {
-        tvErrorMsg.visibility = View.GONE
-        tvSuccessMsg.visibility = View.VISIBLE
+
     }
 
     private fun showError() {
-        tvErrorMsg.visibility = View.VISIBLE
-        tvSuccessMsg.visibility = View.GONE
+        msgLy.visibility = View.VISIBLE
+        msgTitle.text = this.getString(R.string.sw_info4)
     }
 
     private fun getCurrentNightMode(): NightMode {
@@ -91,13 +106,12 @@ class MainActivity : AppCompatActivity() {
             UI_MODE_NIGHT_UNDEFINED -> NightMode.UNKNOWN
             else -> NightMode.UNKNOWN
         }
-    }*/
+    }
 }
 
-/*
 sealed class NightMode {
     object YES: NightMode()
     object NO: NightMode()
     object AUTO: NightMode()
     object UNKNOWN: NightMode()
-}*/
+}
