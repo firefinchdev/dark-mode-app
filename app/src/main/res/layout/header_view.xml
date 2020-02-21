@@ -61,14 +61,6 @@
                         android:textColor="@color/headingTextColor"
                         android:textSize="28sp" />
 
-                    <com.google.android.material.textview.MaterialTextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/manropesemibold"
-                        android:gravity="center"
-                        android:text="@string/night_mode"
-                        android:textColor="#9f9fa7"
-                        android:textSize="14sp" />
                 </LinearLayout>
             </com.google.android.material.navigation.NavigationView>
         </LinearLayout>
