@@ -74,4 +74,6 @@
     <string name="info_for_p">Possible location on Android 9 (Pie)</string>
     <string name="info_for_t">Possible location on Android 10</string>
     <string name="open_settings">Open Settings</string>
+    <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
+    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
 </resources>

@@ -6,8 +6,10 @@ import android.content.res.Configuration
 import android.content.res.Configuration.*
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Gravity
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatDelegate.*
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.header_view.*
@@ -69,7 +71,9 @@ class MainActivity : AppCompatActivity() {
             }
             startActivity(intent)
         }
-        setInitialMode()
+        ivIconMenu.setOnClickListener {
+            drawer_layout.openDrawer(Gravity.LEFT)
+        }
     }
 
     private fun setInitialMode(){
