@@ -15,42 +15,13 @@ import kotlinx.android.synthetic.main.main_view.*
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var uiModeManager: UiModeManager
-    val NIGHT_MODE = 1
-    val NO_NIGHT_MODE = 0
+    private var uiModeManager: UiModeManager?=null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        initiateLayout()
         uiModeManager = getSystemService(UI_MODE_SERVICE) as UiModeManager
-        when (isUsingNightModeResources()) {
-            NightMode.NO -> {
-                btnDay.isSelected = true
-                btnNight.isSelected = false
-            }
-            NightMode.YES -> {
-                btnNight.isSelected = true
-                btnDay.isSelected = false
-            }
-            NightMode.UNKNOWN -> {
-                showError()
-            }
-        }
-
-        /*btnDarkMode.setOnClickListener {
-            uiModeManager.nightMode = when (getCurrentNightMode()){
-                NightMode.NO -> UiModeManager.MODE_NIGHT_YES
-                NightMode.YES -> UiModeManager.MODE_NIGHT_NO
-                NightMode.AUTO -> UiModeManager.MODE_NIGHT_YES
-                NightMode.UNKNOWN -> {
-                    showError()
-                    return@setOnClickListener
-                }
-            }
-            showError()
-        }*/
+        initiateLayout()
     }
 
     fun initiateLayout(){
@@ -69,29 +40,72 @@ class MainActivity : AppCompatActivity() {
         ivFaq.setOnClickListener {
             startActivity(Intent(this,FaqActivity::class.java))
         }
+        btnDay.setOnClickListener {
+            setNightModeBtn(isNight = false)
+            uiModeManager?.nightMode = UiModeManager.MODE_NIGHT_NO
+            showError()
+        }
+        btnNight.setOnClickListener {
+            setNightModeBtn(isNight = true)
+            uiModeManager?.nightMode = UiModeManager.MODE_NIGHT_YES
+            showError()
+        }
+        switchAutoMode.setOnCheckedChangeListener { compoundButton, isChecked ->
+            if(isChecked){
+                btnNight.isSelected = false
+                btnDay.isSelected = false
+                uiModeManager?.nightMode = UiModeManager.MODE_NIGHT_AUTO
+            }
+            else{
+                setInitialMode()
+            }
+            showError()
+        }
+        setInitialMode()
+    }
+
+    private fun setInitialMode(){
+        when (getCurrentNightMode()) {
+            NightMode.NO -> setNightModeBtn(isNight = false)
+            NightMode.YES -> setNightModeBtn(isNight = true)
+            NightMode.UNKNOWN -> {
+                showError()
+            }
+        }
+    }
+
+    private fun setNightModeBtn(isNight: Boolean){
+        btnNight.isSelected = isNight
+        btnDay.isSelected = !isNight
     }
 
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)
         when (newConfig.uiMode and UI_MODE_NIGHT_MASK) {
-            UI_MODE_NIGHT_YES -> showSuccess()
-            UI_MODE_NIGHT_NO -> showSuccess()
+            UI_MODE_NIGHT_YES -> showSuccess(UI_MODE_NIGHT_YES)
+            UI_MODE_NIGHT_NO -> showSuccess(UI_MODE_NIGHT_NO)
             UI_MODE_NIGHT_UNDEFINED -> showError()
         }
         Toast.makeText(this, "Loda Lehsun Config Change Detected", Toast.LENGTH_LONG).show()
     }
 
-    private fun showSuccess() {
-
+    private fun showSuccess(uiModeNight: Int) {
+        msgLy.visibility = View.VISIBLE
+        when(uiModeNight){
+            UI_MODE_NIGHT_YES -> msgTitle.text = this.getString(R.string.sw_info3)
+            UI_MODE_NIGHT_NO -> msgTitle.text = this.getString(R.string.sw_info2)
+        }
+        msgLy.strokeColor = resources.getColor(R.color.switchBgColor)
     }
 
     private fun showError() {
         msgLy.visibility = View.VISIBLE
+        msgLy.strokeColor = resources.getColor(R.color.red)
         msgTitle.text = this.getString(R.string.sw_info4)
     }
 
     private fun getCurrentNightMode(): NightMode {
-        return when (uiModeManager.nightMode) {
+        return when (uiModeManager?.nightMode) {
             MODE_NIGHT_NO -> NightMode.NO
             MODE_NIGHT_YES -> NightMode.YES
             MODE_NIGHT_AUTO, MODE_NIGHT_AUTO_TIME, MODE_NIGHT_AUTO_BATTERY -> NightMode.AUTO
