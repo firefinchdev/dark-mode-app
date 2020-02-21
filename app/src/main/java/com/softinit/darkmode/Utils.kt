@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
+import androidx.core.content.ContextCompat.startActivity
 import com.softinit.darkmode.AppConstants.DEVELOPER_EMAIL
 
 object Utils {
@@ -65,5 +66,12 @@ object Utils {
         val manager = context.packageManager
         val info = manager.getPackageInfo(context.packageName, PackageManager.GET_ACTIVITIES)
         return info.versionName
+    }
+    fun openAppOnPlayStore(context: Context, pkgName: String){
+        try {
+            context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=$pkgName")))
+        } catch (anfe: ActivityNotFoundException) {
+            context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=$pkgName")))
+        }
     }
 }

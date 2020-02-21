@@ -16,4 +16,5 @@
     <color name="menuText">@color/colorAccent</color>
     <color name="headingTextColor">#ffffff</color>
     <color name="switchBgColor">#5e9ff8</color>
+    <color name="supported_apps_item_name_color">#ffffff</color>
 </resources>

@@ -213,10 +213,10 @@
                     android:id="@+id/rvSupportedAppsList"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingStart="16dp"
-                    android:paddingTop="20dp"
-                    android:paddingEnd="16dp"
-                    android:paddingBottom="32dp" />
+                    android:paddingStart="10dp"
+                    android:paddingTop="10dp"
+                    android:paddingEnd="10dp"
+                    android:paddingBottom="10dp" />
             </com.google.android.material.card.MaterialCardView>
         </LinearLayout>
     </ScrollView>

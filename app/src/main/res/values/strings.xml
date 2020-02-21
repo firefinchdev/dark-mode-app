@@ -76,4 +76,13 @@
     <string name="open_settings">Open Settings</string>
     <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
     <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
+    <string name="guide_title">Active Dark Mode</string>
+    <string name="google_pay">Google Pay</string>
+    <string name="google_play">Google Play</string>
+    <string name="chrome">Chrome</string>
+    <string name="photos">Photos</string>
+    <string name="pocket_casts">Pocket Casts</string>
+    <string name="fitness">Google Fitness</string>
+    <string name="ms_launcher">Microsoft Launcher</string>
+    <string name="insgram">Instagram</string>
 </resources>
