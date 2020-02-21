@@ -10,7 +10,6 @@
     <TextView
         android:id="@+id/tvItem"
         android:textSize="14sp"
-        tools:text="@string/unlock_all_features_and_get_rid_of_ads"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_width="match_parent"

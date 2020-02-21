@@ -74,6 +74,7 @@ class MainActivity : AppCompatActivity() {
         ivIconMenu.setOnClickListener {
             drawer_layout.openDrawer(Gravity.LEFT)
         }
+        setInitialMode()
     }
 
     private fun setInitialMode(){

@@ -5,6 +5,7 @@
     <color name="colorPrimary">#27263a</color>
     <color name="colorPrimaryDark">#27263a</color>
 
+    <color name="itemTextColor">#ffffff</color>
     <color name="titleTextColor">#ffffff</color>
     <color name="appBg">#27263a</color>
     <color name="cardViewBg">#353147</color>
