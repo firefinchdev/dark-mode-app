@@ -152,6 +152,8 @@
                 android:layout_margin="20dp"
                 app:cardBackgroundColor="@color/appBg"
                 app:cardCornerRadius="15dp"
+                android:foreground="?selectableItemBackground"
+                android:clickable="true"
                 android:visibility="invisible"
                 app:cardElevation="0.1dp"
                 app:cardPreventCornerOverlap="false"
