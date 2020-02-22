@@ -53,6 +53,7 @@ class InformationActivity : AppCompatActivity() {
                 e.printStackTrace()
             }
         }
+        Utils.setStatusBarIconsColor(this)
     }
     override fun onOptionsItemSelected(menuItem: MenuItem): Boolean {
         if (menuItem.itemId == android.R.id.home) {

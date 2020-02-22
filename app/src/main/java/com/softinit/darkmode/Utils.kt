@@ -1,10 +1,14 @@
 package com.softinit.darkmode
 
+import android.app.Activity
 import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.content.res.Configuration
 import android.net.Uri
+import android.os.Build
+import android.view.View
 import androidx.core.content.ContextCompat.startActivity
 import com.softinit.darkmode.AppConstants.DEVELOPER_EMAIL
 
@@ -72,6 +76,23 @@ object Utils {
             context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=$pkgName")))
         } catch (anfe: ActivityNotFoundException) {
             context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=$pkgName")))
+        }
+    }
+    fun setStatusBarIconsColor(context: Context){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            val decor = (context as Activity).window.decorView
+            when(isUsingNightModeResources(context)){
+                NightMode.NO -> decor.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
+                NightMode.YES -> decor.systemUiVisibility = 0
+            }
+        }
+    }
+    fun isUsingNightModeResources(context: Context): NightMode {
+        return when (context.resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK) {
+            Configuration.UI_MODE_NIGHT_YES -> NightMode.YES
+            Configuration.UI_MODE_NIGHT_NO -> NightMode.NO
+            Configuration.UI_MODE_NIGHT_UNDEFINED -> NightMode.UNKNOWN
+            else -> NightMode.UNKNOWN
         }
     }
 }

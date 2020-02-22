@@ -22,5 +22,6 @@ class FaqActivity : AppCompatActivity() {
         ic_back.setOnClickListener {
             finish()
         }
+        Utils.setStatusBarIconsColor(this)
     }
 }

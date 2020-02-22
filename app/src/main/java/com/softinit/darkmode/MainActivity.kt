@@ -4,16 +4,19 @@ import android.app.UiModeManager
 import android.content.Intent
 import android.content.res.Configuration
 import android.content.res.Configuration.*
+import android.os.Build
 import android.os.Bundle
-import android.os.Handler
 import android.view.Gravity
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate.*
 import androidx.recyclerview.widget.GridLayoutManager
+import com.softinit.darkmode.Utils.isUsingNightModeResources
+import com.softinit.darkmode.Utils.setStatusBarIconsColor
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.header_view.*
 import kotlinx.android.synthetic.main.main_view.*
+
 
 // onConfig changed wouldn't be called if you are try to set day mode on day mode and vice versa
 class MainActivity : AppCompatActivity() {
@@ -62,7 +65,7 @@ class MainActivity : AppCompatActivity() {
                 uiModeManager?.nightMode = UiModeManager.MODE_NIGHT_AUTO
             }
             else{
-                when(isUsingNightModeResources()){
+                when(isUsingNightModeResources(this)){
                     NightMode.YES -> {
                         btnNight.isSelected = true
                         uiModeManager?.nightMode = UiModeManager.MODE_NIGHT_YES
@@ -90,6 +93,7 @@ class MainActivity : AppCompatActivity() {
         rvSupportedAppsList.layoutManager = GridLayoutManager(this,4)
         rvSupportedAppsList.adapter = SupportedAppsAdapter(this, getAppsList(this))
         setInitialMode()
+        setStatusBarIconsColor(this)
     }
 
     private fun setInitialMode(){
@@ -116,11 +120,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)
-        /*when (newConfig.uiMode and UI_MODE_NIGHT_MASK) {
-            UI_MODE_NIGHT_YES -> showSuccess(UI_MODE_NIGHT_YES)
-            UI_MODE_NIGHT_NO -> showSuccess(UI_MODE_NIGHT_NO)
-            UI_MODE_NIGHT_UNDEFINED -> showError()
-        }*/
         recreate()
     }
 
@@ -145,15 +144,6 @@ class MainActivity : AppCompatActivity() {
             MODE_NIGHT_NO -> NightMode.NO
             MODE_NIGHT_YES -> NightMode.YES
             MODE_NIGHT_AUTO, MODE_NIGHT_AUTO_TIME, MODE_NIGHT_AUTO_BATTERY -> NightMode.AUTO
-            else -> NightMode.UNKNOWN
-        }
-    }
-
-    private fun isUsingNightModeResources(): NightMode {
-        return when (resources.configuration.uiMode and UI_MODE_NIGHT_MASK) {
-            UI_MODE_NIGHT_YES -> NightMode.YES
-            UI_MODE_NIGHT_NO -> NightMode.NO
-            UI_MODE_NIGHT_UNDEFINED -> NightMode.UNKNOWN
             else -> NightMode.UNKNOWN
         }
     }
