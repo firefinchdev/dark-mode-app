@@ -85,6 +85,12 @@ class MainActivity : AppCompatActivity() {
         when (getCurrentNightMode()) {
             NightMode.NO -> setNightModeBtn(isNight = false)
             NightMode.YES -> setNightModeBtn(isNight = true)
+            NightMode.AUTO -> {
+                switchAutoMode.isChecked = true
+                btnDay.isSelected = false
+                btnNight.isSelected = false
+                showSuccess(UI_MODE_NIGHT_UNDEFINED)
+            }
             NightMode.UNKNOWN -> {
                 showError()
             }
@@ -94,17 +100,17 @@ class MainActivity : AppCompatActivity() {
     private fun setNightModeBtn(isNight: Boolean){
         btnNight.isSelected = isNight
         btnDay.isSelected = !isNight
+        showSuccess(if(isNight) UI_MODE_NIGHT_YES else UI_MODE_NIGHT_NO)
     }
 
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)
-        when (newConfig.uiMode and UI_MODE_NIGHT_MASK) {
+        /*when (newConfig.uiMode and UI_MODE_NIGHT_MASK) {
             UI_MODE_NIGHT_YES -> showSuccess(UI_MODE_NIGHT_YES)
             UI_MODE_NIGHT_NO -> showSuccess(UI_MODE_NIGHT_NO)
             UI_MODE_NIGHT_UNDEFINED -> showError()
-        }
+        }*/
         recreate()
-        Toast.makeText(this, "Loda Lehsun Config Change Detected", Toast.LENGTH_LONG).show()
     }
 
     private fun showSuccess(uiModeNight: Int) {
@@ -112,6 +118,7 @@ class MainActivity : AppCompatActivity() {
         when(uiModeNight){
             UI_MODE_NIGHT_YES -> msgTitle.text = this.getString(R.string.sw_info3)
             UI_MODE_NIGHT_NO -> msgTitle.text = this.getString(R.string.sw_info2)
+            else ->  msgTitle.text = this.getString(R.string.sw_info1)
         }
         msgLy.strokeColor = resources.getColor(R.color.switchBgColor)
     }
