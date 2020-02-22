@@ -4,18 +4,18 @@ import android.app.UiModeManager
 import android.content.Intent
 import android.content.res.Configuration
 import android.content.res.Configuration.*
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.view.Gravity
 import android.view.View
-import android.widget.Toast
-import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate.*
 import androidx.recyclerview.widget.GridLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.header_view.*
 import kotlinx.android.synthetic.main.main_view.*
 
+// onConfig changed wouldn't be called if you are try to set day mode on day mode and vice versa
 class MainActivity : AppCompatActivity() {
 
     private var uiModeManager: UiModeManager?=null
@@ -44,11 +44,13 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this,FaqActivity::class.java))
         }
         btnDay.setOnClickListener {
+            if(switchAutoMode.isChecked) switchAutoMode.isChecked = false
             setNightModeBtn(isNight = false)
             uiModeManager?.nightMode = UiModeManager.MODE_NIGHT_NO
             showError()
         }
         btnNight.setOnClickListener {
+            if(switchAutoMode.isChecked) switchAutoMode.isChecked = false
             setNightModeBtn(isNight = true)
             uiModeManager?.nightMode = UiModeManager.MODE_NIGHT_YES
             showError()
@@ -58,12 +60,21 @@ class MainActivity : AppCompatActivity() {
                 btnNight.isSelected = false
                 btnDay.isSelected = false
                 uiModeManager?.nightMode = UiModeManager.MODE_NIGHT_AUTO
-                // you switched to auto mode success
             }
             else{
-                setInitialMode()
+                when(isUsingNightModeResources()){
+                    NightMode.YES -> {
+                        btnNight.isSelected = true
+                        uiModeManager?.nightMode = UiModeManager.MODE_NIGHT_YES
+                    }
+                    NightMode.NO -> {
+                        btnDay.isSelected = true
+                        uiModeManager?.nightMode = UiModeManager.MODE_NIGHT_NO
+                    }
+                    NightMode.UNKNOWN -> showError()
+                }
             }
-            //showError()
+//            showError()
         }
         msgLy.setOnClickListener {
             val intent = Intent(this,InformationActivity::class.java)
