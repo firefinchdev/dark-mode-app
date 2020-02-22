@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorAccent">#ffffff</color>
+
+    <color name="colorPrimary">#27263a</color>
+    <color name="colorPrimaryDark">#27263a</color>
+
+    <color name="itemTextColor">#ffffff</color>
+    <color name="titleTextColor">#ffffff</color>
+    <color name="appBg">#27263a</color>
+    <color name="cardViewBg">#353147</color>
+    <color name="headerViewBg">#27263a</color>
+    <color name="selectedTxtColor">#ffffff</color>
+    <color name="unselectedTxtColor">#96969f</color>
+    <color name="unselectedBgColor">#4f486e</color>
+    <color name="menuText">@color/colorAccent</color>
+    <color name="headingTextColor">#ffffff</color>
+    <color name="switchBgColor">#5e9ff8</color>
+    <color name="supported_apps_item_name_color">#ffffff</color>
+</resources>

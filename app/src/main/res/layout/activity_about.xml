@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/appBg"
+    android:layout_height="match_parent"
+   >
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/appBg"
+        android:minHeight="?actionBarSize"
+        android:theme="@style/ThemeOverlay.AppCompat"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="?actionBarPopupTheme"
+        app:itemTextColor="@color/itemTextColor" />
+
+    <View
+        android:id="@+id/viewBg"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/tvAppVersion"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+
+    <TextView
+        android:id="@+id/tvAppName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:text="@string/app_name"
+        android:textColor="@color/titleTextColor"
+        android:textSize="@dimen/text_size_large"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivAppIcon" />
+
+    <TextView
+        android:id="@+id/tvAppVersion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_tiny"
+        android:paddingBottom="@dimen/margin_post_medium"
+        android:textColor="@color/itemTextColor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvAppName"
+        tools:text="1.4.2" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/ivAppIcon"
+        android:layout_width="84dp"
+        android:layout_height="84dp"
+        android:src="@mipmap/ic_launcher"
+        app:civ_border_color="@color/itemTextColor"
+        app:civ_border_width="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clConnect"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
+        app:layout_constraintTop_toBottomOf="@id/viewBg">
+
+        <ImageView
+            android:padding="@dimen/margin_medium"
+            android:id="@+id/ivConnect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_pre_small"
+            android:src="@drawable/ic_linkedin"
+            android:tint="@color/itemTextColor"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/connect_with_us"
+            android:textColor="@color/itemTextColor"
+            android:textSize="@dimen/text_size_xxnormal"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/ivConnect"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:padding="@dimen/margin_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:layout_marginEnd="@dimen/margin_medium"
+            android:src="@drawable/ic_chevron_right_black_24dp"
+            android:tint="@color/itemTextColor"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/view2"
+            app:layout_constraintStart_toStartOf="@id/tv2"
+            android:layout_width="0dp"
+            android:layout_height="0.5dp"
+            android:background="@color/grey_400"
+            app:layout_constraintBottom_toBottomOf="@id/clConnect" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clFeedback"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
+        app:layout_constraintTop_toBottomOf="@id/clConnect">
+
+        <ImageView
+            android:padding="@dimen/margin_medium"
+            android:id="@+id/ivFeedback"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_pre_small"
+            android:src="@drawable/contactus"
+            android:tint="@color/itemTextColor"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/feedback"
+            android:textColor="@color/itemTextColor"
+            android:textSize="@dimen/text_size_xxnormal"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/ivFeedback"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:padding="@dimen/margin_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:layout_marginEnd="@dimen/margin_medium"
+            android:src="@drawable/ic_chevron_right_black_24dp"
+            android:tint="@color/itemTextColor"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            app:layout_constraintStart_toStartOf="@id/tv3"
+            android:id="@+id/view3"
+            android:layout_width="0dp"
+            android:layout_height="0.5dp"
+            android:background="@color/grey_400"
+            app:layout_constraintBottom_toBottomOf="@id/clFeedback" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clOtherApps"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
+        app:layout_constraintTop_toBottomOf="@id/clFeedback">
+
+        <ImageView
+            android:padding="@dimen/margin_medium"
+            android:id="@+id/ivOtherApps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_pre_small"
+            android:src="@drawable/moreapps"
+            android:tint="@color/itemTextColor"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/other_apps"
+            android:textColor="@color/itemTextColor"
+            android:textSize="@dimen/text_size_xxnormal"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/ivOtherApps"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:padding="@dimen/margin_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:layout_marginEnd="@dimen/margin_medium"
+            android:src="@drawable/ic_chevron_right_black_24dp"
+            android:tint="@color/itemTextColor"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            app:layout_constraintStart_toStartOf="@id/tv4"
+            android:id="@+id/view4"
+            android:layout_width="0dp"
+            android:layout_height="0.5dp"
+            android:background="@color/grey_400"
+            app:layout_constraintBottom_toBottomOf="@id/clOtherApps" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clRateus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
+        app:layout_constraintTop_toBottomOf="@id/clOtherApps">
+
+        <ImageView
+            android:id="@+id/ivRate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_pre_small"
+            android:padding="@dimen/margin_medium"
+            android:src="@drawable/ratetheapp"
+            android:tint="@color/itemTextColor"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rate_us"
+            android:textColor="@color/itemTextColor"
+            android:textSize="@dimen/text_size_xxnormal"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/ivRate"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:padding="@dimen/margin_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:layout_marginEnd="@dimen/margin_medium"
+            android:src="@drawable/ic_chevron_right_black_24dp"
+            android:tint="@color/itemTextColor"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            app:layout_constraintStart_toStartOf="@id/tv5"
+            android:id="@+id/view5"
+            android:layout_width="0dp"
+            android:layout_height="0.5dp"
+            android:background="@color/grey_400"
+            app:layout_constraintBottom_toBottomOf="@id/clRateus" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btmTnC"
+        app:strokeColor="@color/itemTextColor"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_tiny"
+        android:textAlignment="center"
+        android:layout_marginBottom="@dimen/margin_small"
+        android:backgroundTint="@color/white"
+        android:fontFamily="sans-serif-condensed"
+        android:minWidth="@dimen/margin_tiny"
+        android:minHeight="@dimen/margin_tiny"
+        android:padding="@dimen/margin_tiny"
+        android:text="@string/terms_amp_conditions"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_xxtiny"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/iv1" />
+
+    <ImageView
+        android:id="@+id/iv1"
+        android:layout_width="@dimen/margin_pre_small"
+        android:layout_height="@dimen/margin_pre_small"
+        android:layout_marginStart="@dimen/margin_tiny"
+        android:layout_marginEnd="@dimen/margin_tiny"
+        android:src="@drawable/ic_circle_24dp"
+        android:tint="@color/itemTextColor"
+        app:layout_constraintBottom_toBottomOf="@id/btmTnC"
+        app:layout_constraintEnd_toStartOf="@id/btnPolicy"
+        app:layout_constraintTop_toTopOf="@id/btmTnC" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnPolicy"
+        app:strokeColor="@color/itemTextColor"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_small"
+        android:textAlignment="center"
+        android:backgroundTint="@color/white"
+        android:fontFamily="sans-serif-condensed"
+        android:padding="@dimen/margin_tiny"
+        android:minWidth="@dimen/margin_tiny"
+        android:minHeight="@dimen/margin_tiny"
+        android:text="@string/privacy_policy"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_xxtiny"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv2"
+        android:layout_width="@dimen/margin_pre_small"
+        android:layout_height="@dimen/margin_pre_small"
+        android:layout_marginStart="@dimen/margin_tiny"
+        android:layout_marginEnd="@dimen/margin_tiny"
+        android:src="@drawable/ic_circle_24dp"
+        android:tint="@color/itemTextColor"
+        app:layout_constraintBottom_toBottomOf="@id/btmTnC"
+        app:layout_constraintStart_toEndOf="@id/btnPolicy"
+        app:layout_constraintTop_toTopOf="@id/btmTnC" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnOpenSource"
+        app:strokeColor="@color/itemTextColor"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        android:textAlignment="center"
+        android:fontFamily="sans-serif-condensed"
+        android:layout_marginBottom="@dimen/margin_small"
+        android:layout_marginStart="@dimen/margin_tiny"
+        android:minWidth="@dimen/margin_tiny"
+        android:minHeight="@dimen/margin_tiny"
+        android:padding="@dimen/margin_tiny"
+        android:text="@string/open_source"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_xxtiny"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/iv2" />
+</androidx.constraintlayout.widget.ConstraintLayout>
