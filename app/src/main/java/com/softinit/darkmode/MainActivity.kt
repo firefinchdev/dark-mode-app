@@ -58,11 +58,12 @@ class MainActivity : AppCompatActivity() {
                 btnNight.isSelected = false
                 btnDay.isSelected = false
                 uiModeManager?.nightMode = UiModeManager.MODE_NIGHT_AUTO
+                // you switched to auto mode success
             }
             else{
                 setInitialMode()
             }
-            showError()
+            //showError()
         }
         msgLy.setOnClickListener {
             val intent = Intent(this,InformationActivity::class.java)
@@ -102,6 +103,7 @@ class MainActivity : AppCompatActivity() {
             UI_MODE_NIGHT_NO -> showSuccess(UI_MODE_NIGHT_NO)
             UI_MODE_NIGHT_UNDEFINED -> showError()
         }
+        recreate()
         Toast.makeText(this, "Loda Lehsun Config Change Detected", Toast.LENGTH_LONG).show()
     }
 
