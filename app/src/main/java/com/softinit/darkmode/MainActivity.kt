@@ -79,7 +79,7 @@ class MainActivity : AppCompatActivity() {
         msgLy.setOnClickListener {
             val intent = Intent(this,InformationActivity::class.java)
             when(msgTitle.text){
-                getString(R.string.sw_info2),getString(R.string.sw_info3) -> intent.putExtra("type",UI_MODE_NIGHT_YES)
+                getString(R.string.sw_info2),getString(R.string.sw_info3),getString(R.string.sw_info1) -> intent.putExtra("type",UI_MODE_NIGHT_YES)
                 getString(R.string.sw_info4) -> intent.putExtra("type",UI_MODE_NIGHT_UNDEFINED)
             }
             startActivity(intent)
