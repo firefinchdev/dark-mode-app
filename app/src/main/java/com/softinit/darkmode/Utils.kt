@@ -73,6 +73,10 @@ object Utils {
     }
     fun openAppOnPlayStore(context: Context, pkgName: String){
         try {
+            if(pkgName.equals("com.android.vending")){
+                context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com")))
+                return
+            }
             context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=$pkgName")))
         } catch (anfe: ActivityNotFoundException) {
             context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=$pkgName")))
