@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "562114280019",
+    "firebase_url": "https://dark-mode-30ef3.firebaseio.com",
+    "project_id": "dark-mode-30ef3",
+    "storage_bucket": "dark-mode-30ef3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:562114280019:android:e120652f3fa2e2d5cea4a6",
+        "android_client_info": {
+          "package_name": "com.softinit.darkmode"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "562114280019-u17i8h5pnd0a4p2pm5a3atvkqben3dbu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCA6A8HL9ZHjgVte0H-9eTjjHs1WY6NeZ4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "562114280019-u17i8h5pnd0a4p2pm5a3atvkqben3dbu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

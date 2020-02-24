@@ -85,4 +85,7 @@
     <string name="fitness">Google Fitness</string>
     <string name="ms_launcher">Microsoft Launcher</string>
     <string name="insgram">Instagram</string>
+    <string name="preference_first_start">key_preference_first_start</string>
+    <string name="key_preference_dark_mode">key_preference_dark_theme_enabled</string>
+    <string name="key_user_session_count">key_user_session_count</string>
 </resources>

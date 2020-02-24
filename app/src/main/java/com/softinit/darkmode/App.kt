@@ -23,15 +23,6 @@ class App: Application(){
         fun getAppResources(): Resources {
             return res
         }
-
-        @JvmStatic
-        private var internalStorageDir: File? = null
-
-        @JvmStatic
-        fun getInternalStorageDir(): File? {
-            return internalStorageDir
-        }
-
     }
 
     override fun onCreate() {
@@ -39,6 +30,8 @@ class App: Application(){
         if (AudienceNetworkAds.isInAdsProcess(this)) {
             return
         }
+        mInstance = this
+        res = resources
         AudienceNetworkAds.initialize(this)
     }
 

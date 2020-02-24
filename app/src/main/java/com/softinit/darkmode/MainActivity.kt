@@ -11,6 +11,11 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate.*
 import androidx.recyclerview.widget.GridLayoutManager
+import com.facebook.ads.AdSize
+import com.google.firebase.analytics.FirebaseAnalytics
+import com.softinit.darkmode.AppPreferences.firstStart
+import com.softinit.darkmode.AppPreferences.isDarkThemeEnabled
+import com.softinit.darkmode.AppPreferences.userSessionCount
 import com.softinit.darkmode.Utils.isUsingNightModeResources
 import com.softinit.darkmode.Utils.setStatusBarIconsColor
 import kotlinx.android.synthetic.main.activity_main.*
@@ -22,12 +27,22 @@ import kotlinx.android.synthetic.main.main_view.*
 class MainActivity : AppCompatActivity() {
 
     private var uiModeManager: UiModeManager?=null
-
+    private var appInterstitialAd: AppInterstitialAd? = null
+    private var adView: AppAdView? = null
+    val firebaseAnalytics by lazy {
+        FirebaseAnalytics.getInstance(this)
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         uiModeManager = getSystemService(UI_MODE_SERVICE) as UiModeManager
         initiateLayout()
+        setupBannerAd()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        setNewInstanceInterstitialAd()
     }
 
     fun initiateLayout(){
@@ -94,6 +109,9 @@ class MainActivity : AppCompatActivity() {
         rvSupportedAppsList.adapter = SupportedAppsAdapter(this, getAppsList(this))
         setInitialMode()
         setStatusBarIconsColor(this)
+        if(firstStart) firstStart = false
+        userSessionCount += 1
+        AppRatingDialog.getDialog(this, true).show()
     }
 
     private fun setInitialMode(){
@@ -120,6 +138,10 @@ class MainActivity : AppCompatActivity() {
 
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)
+        when (newConfig.uiMode and UI_MODE_NIGHT_MASK) {
+            UI_MODE_NIGHT_YES -> isDarkThemeEnabled = true
+            UI_MODE_NIGHT_NO -> isDarkThemeEnabled = false
+        }
         recreate()
     }
 
@@ -145,6 +167,30 @@ class MainActivity : AppCompatActivity() {
             MODE_NIGHT_YES -> NightMode.YES
             MODE_NIGHT_AUTO, MODE_NIGHT_AUTO_TIME, MODE_NIGHT_AUTO_BATTERY -> NightMode.AUTO
             else -> NightMode.UNKNOWN
+        }
+    }
+    private fun setNewInstanceInterstitialAd() {
+        appInterstitialAd = newAppInterstitialAdConditional(
+            this,
+            "2234699096830264_2235586420074865",
+            firebaseAnalytics,
+            "AdMainActivity",
+            showInterval = 3
+        ).also {
+            it?.onDismiss = {
+                setNewInstanceInterstitialAd()
+            }
+        }
+    }
+    private fun setupBannerAd() {
+        adView = newAppAdViewConditional(this,
+            "2234699096830264_2235661753400665",
+            AdSize.BANNER_HEIGHT_50,
+            firebaseAnalytics,
+            "BannerAdMainActiv")
+        adView?.let { adView ->
+            bannerContainer.addView(adView)
+            adView.loadAd()
         }
     }
 }
