@@ -34,6 +34,7 @@ class MainActivity : AppCompatActivity() {
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setNewInstanceInterstitialAd()
         setContentView(R.layout.activity_main)
         uiModeManager = getSystemService(UI_MODE_SERVICE) as UiModeManager
         initiateLayout()
@@ -42,7 +43,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        setNewInstanceInterstitialAd()
     }
 
     fun initiateLayout(){
@@ -172,7 +172,7 @@ class MainActivity : AppCompatActivity() {
     private fun setNewInstanceInterstitialAd() {
         appInterstitialAd = newAppInterstitialAdConditional(
             this,
-            "2234699096830264_2235586420074865",
+            "792185624602570_792186791269120",
             firebaseAnalytics,
             "AdMainActivity",
             showInterval = 3
@@ -184,7 +184,7 @@ class MainActivity : AppCompatActivity() {
     }
     private fun setupBannerAd() {
         adView = newAppAdViewConditional(this,
-            "2234699096830264_2235661753400665",
+            "792185624602570_792187567935709",
             AdSize.BANNER_HEIGHT_50,
             firebaseAnalytics,
             "BannerAdMainActiv")
