@@ -34,15 +34,21 @@ class MainActivity : AppCompatActivity() {
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setNewInstanceInterstitialAd()
         setContentView(R.layout.activity_main)
         uiModeManager = getSystemService(UI_MODE_SERVICE) as UiModeManager
         initiateLayout()
         setupBannerAd()
+        setNewInstanceInterstitialAd()
     }
 
     override fun onResume() {
         super.onResume()
+        appInterstitialAd?.showIfValidLoadedInterval()
+    }
+
+    override fun onDestroy() {
+        appInterstitialAd?.destroy()
+        super.onDestroy()
     }
 
     fun initiateLayout(){
