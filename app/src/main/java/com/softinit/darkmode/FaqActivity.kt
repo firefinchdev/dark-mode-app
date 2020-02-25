@@ -32,7 +32,7 @@ class FaqActivity : AppCompatActivity() {
             "792185624602570_792196721268127",
             firebaseAnalytics,
             "AdFaqActivity",
-            showInterval = 1,
+            showInterval = 2,
             destroyOnDismiss = true
         )
         Utils.setStatusBarIconsColor(this)

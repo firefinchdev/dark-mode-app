@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatDelegate.*
 import androidx.recyclerview.widget.GridLayoutManager
 import com.facebook.ads.AdSize
 import com.google.firebase.analytics.FirebaseAnalytics
+import com.softinit.darkmode.AppConstants.PRIVACY_POLICY_URL
 import com.softinit.darkmode.AppPreferences.firstStart
 import com.softinit.darkmode.AppPreferences.isDarkThemeEnabled
 import com.softinit.darkmode.AppPreferences.userSessionCount
@@ -59,7 +60,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.nav_share -> startActivity(Utils.share(this))
                 R.id.nav_feedback -> Utils.sendFeedback(this)
                 R.id.nav_faq -> startActivity(Intent(this,FaqActivity::class.java))
-                R.id.nav_privacypolicy -> Utils.openBrowser(this,"")
+                R.id.nav_privacypolicy -> Utils.openBrowser(this,PRIVACY_POLICY_URL)
                 R.id.nav_about_us -> startActivity(Intent(this, AboutActivity::class.java))
             }
             true
