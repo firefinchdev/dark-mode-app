@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatDelegate.*
 import androidx.recyclerview.widget.GridLayoutManager
 import com.facebook.ads.AdSize
 import com.google.firebase.analytics.FirebaseAnalytics
+import com.softinit.darkmode.AppConstants.APP_RATE_DIALOG_INTERVAL
 import com.softinit.darkmode.AppConstants.PRIVACY_POLICY_URL
 import com.softinit.darkmode.AppPreferences.firstStart
 import com.softinit.darkmode.AppPreferences.isDarkThemeEnabled
@@ -145,6 +146,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)
+        if(APP_RATE_DIALOG_INTERVAL == 0)
+            APP_RATE_DIALOG_INTERVAL = 5
         when (newConfig.uiMode and UI_MODE_NIGHT_MASK) {
             UI_MODE_NIGHT_YES -> isDarkThemeEnabled = true
             UI_MODE_NIGHT_NO -> isDarkThemeEnabled = false
@@ -182,7 +185,7 @@ class MainActivity : AppCompatActivity() {
             "792185624602570_792186791269120",
             firebaseAnalytics,
             "AdMainActivity",
-            showInterval = 3
+            showInterval = 5
         ).also {
             it?.onDismiss = {
                 setNewInstanceInterstitialAd()

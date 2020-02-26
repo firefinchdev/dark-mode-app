@@ -14,7 +14,7 @@
     <string name="rate_later">Later</string>
     <string name="rate_never">Never</string>
     <string name="rate_us">Rate us</string>
-    <string name="terms_amp_conditions"><![CDATA[TERMS & CONDITIONS]]></string>
+    <string name="terms_amp_conditions" translatable="false"><![CDATA[TERMS & CONDITIONS]]></string>
     <string name="rateUs">Please Rate us on Play Store</string>
     <string name="send_feedback">Please send the feedback using E-Mail. We\'ll work on it!</string>
     <string name="share_with_friends">Share with friends</string>
@@ -29,7 +29,7 @@
     <string name="sw_info2">You switched to day mode.</string>
     <string name="sw_info3">You switched to night mode.</string>
     <string name="sw_info4">Your phone does not support the Android dark mode</string>
-    <string name="app_share">Try Dark Mode for your Phone &amp; HD Amoled Wallpaper �� \10\10 Dark Mode Support All Social Media Apps ✨��</string>
+    <string name="app_share" translatable="false">Try Dark Mode for your Phone \n\nDark Mode Support All Social Media Apps \nhttps://play.google.com/store/apps/details?id=com.softinit.darkmode</string>
     <string name="dm_info1">In some cases, phone manufacturers have added a dark mode toggle into the system settings.</string>
     <string name="dm_info2">The Desk Mode can be activated by placing the phone in a desk dock.</string>
     <string name="dm_info3">Some phone manufacturers have deactivated or changed the behavior of the Android dark mode on their devices. Because of this, the Dark Mode app can\'t activate the dark mode on your phone.</string>
@@ -63,9 +63,9 @@
     <string name="app_behaviour_weird_ques">App XYZ looks weird since activating the dark mode. What went wrong?</string>
     <string name="app_orange_tint_ques">My screen has an orange tint since activating the dark mode. Why is that?</string>
     <string name="updated_android_ques">I updated Android, but I cannot change the mode anymore. Why is that?</string>
-    <string name="no">1.</string>
-    <string name="nu">2.</string>
-    <string name="num">3.</string>
+    <string name="no" translatable="false">1.</string>
+    <string name="nu" translatable="false">2.</string>
+    <string name="num" translatable="false">3.</string>
     <string name="not_work">Something does not work?</string>
     <string name="faq">FAQ</string>
     <string name="fq">Learn more about this and similar issues in the FAQ.</string>
@@ -85,7 +85,7 @@
     <string name="fitness">Google Fitness</string>
     <string name="ms_launcher">Microsoft Launcher</string>
     <string name="insgram">Instagram</string>
-    <string name="preference_first_start">key_preference_first_start</string>
-    <string name="key_preference_dark_mode">key_preference_dark_theme_enabled</string>
-    <string name="key_user_session_count">key_user_session_count</string>
+    <string name="preference_first_start" translatable="false">key_preference_first_start</string>
+    <string name="key_preference_dark_mode" translatable="false">key_preference_dark_theme_enabled</string>
+    <string name="key_user_session_count" translatable="false">key_user_session_count</string>
 </resources>
