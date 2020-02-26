@@ -17,6 +17,7 @@ class AboutActivity : AppCompatActivity() {
         setContentView(R.layout.activity_about)
         toolbar.title = ""
         setSupportActionBar(toolbar)
+        Utils.setStatusBarIconsColor(this)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         tvAppVersion.text = Utils.getAppVersion(this)

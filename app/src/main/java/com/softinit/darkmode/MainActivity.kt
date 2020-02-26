@@ -11,6 +11,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate.*
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.facebook.ads.AdSize
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.softinit.darkmode.AppConstants.APP_RATE_DIALOG_INTERVAL
@@ -113,7 +114,7 @@ class MainActivity : AppCompatActivity() {
         ivIconMenu.setOnClickListener {
             drawer_layout.openDrawer(Gravity.LEFT)
         }
-        rvSupportedAppsList.layoutManager = GridLayoutManager(this,4)
+        rvSupportedAppsList.layoutManager = GridLayoutManager(this,4) as RecyclerView.LayoutManager?
         rvSupportedAppsList.adapter = SupportedAppsAdapter(this, getAppsList(this))
         setInitialMode()
         setStatusBarIconsColor(this)
