@@ -18,7 +18,7 @@
     <string name="rate_us">Rate us</string>
     <string name="terms_amp_conditions" translatable="false">TERMS &amp; CONDITIONS</string>
     <string name="rateUs">Please Rate us on Play Store</string>
-    <string name="send_feedback">Please send the feedback using E-Mail. We\\'ll work on it!</string>
+    <string name="send_feedback">Please send the feedback using E-Mail. We\'ll work on it!</string>
     <string name="share_with_friends">Share with friends</string>
     <string name="feedback">Feedback</string>
     <string name="faaq">Faq</string>
@@ -34,13 +34,13 @@
     <string name="app_share" translatable="false">Try Dark Mode for your Phone \n\nDark Mode Support All Social Media Apps \nhttps://play.google.com/store/apps/details?id=com.softinit.darkmode</string>
     <string name="dm_info1">In some cases, phone manufacturers have added a dark mode toggle into the system settings.</string>
     <string name="dm_info2">The Desk Mode can be activated by placing the phone in a desk dock.</string>
-    <string name="dm_info3">Some phone manufacturers have deactivated or changed the behavior of the Android dark mode on their devices. Because of this, the Dark Mode app can\\'t activate the dark mode on your phone.</string>
+    <string name="dm_info3">Some phone manufacturers have deactivated or changed the behavior of the Android dark mode on their devices. Because of this, the Dark Mode app can\'t activate the dark mode on your phone.</string>
     <string name="dm_info4">To get the dark mode on older Android phones (up to Android 5.1 - Lollipop), you sometimes have to activate one of the following modes.</string>
     <string name="dm_info5">The FAQ answers the most commonly asked questions.</string>
     <string name="info">Information</string>
     <string name="info1">Is there another option to activate the dark mode?</string>
     <string name="info10">Your eyes may relax.</string>
-    <string name="info11">You don\\'t have to wait for Android 10 to get the dark mode!</string>
+    <string name="info11">You don\'t have to wait for Android 10 to get the dark mode!</string>
     <string name="info2">What went wrong?</string>
     <string name="info3">Why do I have to activate the Car Mode?</string>
     <string name="info4">Settings -&gt; Display -&gt; Advanced -&gt; Device Theme</string>

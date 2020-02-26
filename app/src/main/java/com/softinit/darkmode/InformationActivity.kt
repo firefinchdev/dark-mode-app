@@ -8,12 +8,16 @@ import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.analytics.FirebaseAnalytics
 import kotlinx.android.synthetic.main.activity_information.*
 import java.lang.Exception
 
 
 class InformationActivity : AppCompatActivity() {
 
+    val firebaseAnalytics by lazy {
+        FirebaseAnalytics.getInstance(this)
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_information)
@@ -25,6 +29,7 @@ class InformationActivity : AppCompatActivity() {
             UI_MODE_NIGHT_YES -> {
                 msgSuccess.visibility = View.VISIBLE
                 msgError.visibility = View.GONE
+                firebaseAnalytics.logEvent("InformationActivity:UI_MODE_NIGHT_YES")
             }
             UI_MODE_NIGHT_UNDEFINED -> {
                 msgSuccess.visibility = View.GONE
@@ -35,6 +40,7 @@ class InformationActivity : AppCompatActivity() {
                     }
                     else -> msg_subLy.visibility = View.VISIBLE
                 }
+                firebaseAnalytics.logEvent("InformationActivity:UI_MODE_NIGHT_UNDEFINED")
             }
         }
         btn1.setOnClickListener {

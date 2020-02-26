@@ -146,6 +146,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)
+        firebaseAnalytics.logEvent("onConfigurationChanged")
         if(APP_RATE_DIALOG_INTERVAL == 0)
             APP_RATE_DIALOG_INTERVAL = 5
         when (newConfig.uiMode and UI_MODE_NIGHT_MASK) {
