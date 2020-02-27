@@ -114,8 +114,6 @@ class MainActivity : AppCompatActivity() {
         ivIconMenu.setOnClickListener {
             drawer_layout.openDrawer(Gravity.LEFT)
         }
-        rvSupportedAppsList.layoutManager = GridLayoutManager(this,4) as RecyclerView.LayoutManager?
-        rvSupportedAppsList.adapter = SupportedAppsAdapter(this, getAppsList(this))
         setInitialMode()
         setStatusBarIconsColor(this)
         if(firstStart) firstStart = false
@@ -196,8 +194,8 @@ class MainActivity : AppCompatActivity() {
     }
     private fun setupBannerAd() {
         adView = newAppAdViewConditional(this,
-            "792185624602570_792187567935709",
-            AdSize.BANNER_HEIGHT_50,
+            "792185624602570_794108871076912",
+            AdSize.RECTANGLE_HEIGHT_250,
             firebaseAnalytics,
             "BannerAdMainActiv")
         adView?.let { adView ->
