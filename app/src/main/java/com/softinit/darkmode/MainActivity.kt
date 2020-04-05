@@ -22,7 +22,6 @@ import com.softinit.darkmode.AppPreferences.userSessionCount
 import com.softinit.darkmode.Utils.isUsingNightModeResources
 import com.softinit.darkmode.Utils.setStatusBarIconsColor
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.header_view.*
 import kotlinx.android.synthetic.main.main_view.*
 
 
@@ -55,22 +54,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun initiateLayout(){
-        nav_view.setNavigationItemSelectedListener {item ->
-            when(item.itemId){
-                R.id.nav_more_apps -> Utils.openDevPage(this)
-                R.id.nav_rate_app -> AppRatingDialog.getDialog(this, false).show()
-                R.id.nav_share -> startActivity(Utils.share(this))
-                R.id.nav_feedback -> Utils.sendFeedback(this)
-                R.id.nav_faq -> startActivity(Intent(this,FaqActivity::class.java))
-                R.id.nav_privacypolicy -> Utils.openBrowser(this,PRIVACY_POLICY_URL)
-                R.id.nav_about_us -> startActivity(Intent(this, AboutActivity::class.java))
-            }
-            true
-        }
         ivFaq.setOnClickListener {
             startActivity(Intent(this,FaqActivity::class.java))
         }
-        btnDay.setOnClickListener {
+        /*btnDay.setOnClickListener {
             if(switchAutoMode.isChecked) switchAutoMode.isChecked = false
             setNightModeBtn(isNight = false)
             uiModeManager?.nightMode = UiModeManager.MODE_NIGHT_NO
@@ -102,7 +89,7 @@ class MainActivity : AppCompatActivity() {
                 }
             }
 //            showError()
-        }
+        }*/
         msgLy.setOnClickListener {
             val intent = Intent(this,InformationActivity::class.java)
             when(msgTitle.text){
@@ -110,9 +97,6 @@ class MainActivity : AppCompatActivity() {
                 getString(R.string.sw_info4) -> intent.putExtra("type",UI_MODE_NIGHT_UNDEFINED)
             }
             startActivity(intent)
-        }
-        ivIconMenu.setOnClickListener {
-            drawer_layout.openDrawer(Gravity.LEFT)
         }
         setInitialMode()
         setStatusBarIconsColor(this)
@@ -125,12 +109,12 @@ class MainActivity : AppCompatActivity() {
         when (getCurrentNightMode()) {
             NightMode.NO -> setNightModeBtn(isNight = false)
             NightMode.YES -> setNightModeBtn(isNight = true)
-            NightMode.AUTO -> {
+            /*NightMode.AUTO -> {
                 switchAutoMode.isChecked = true
                 btnDay.isSelected = false
                 btnNight.isSelected = false
                 showSuccess(UI_MODE_NIGHT_UNDEFINED)
-            }
+            }*/
             NightMode.UNKNOWN -> {
                 showError()
             }
@@ -138,8 +122,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setNightModeBtn(isNight: Boolean){
-        btnNight.isSelected = isNight
-        btnDay.isSelected = !isNight
+        /*btnNight.isSelected = isNight
+        btnDay.isSelected = !isNight*/
         showSuccess(if(isNight) UI_MODE_NIGHT_YES else UI_MODE_NIGHT_NO)
     }
 
@@ -162,12 +146,12 @@ class MainActivity : AppCompatActivity() {
             UI_MODE_NIGHT_NO -> msgTitle.text = this.getString(R.string.sw_info2)
             else ->  msgTitle.text = this.getString(R.string.sw_info1)
         }
-        msgLy.strokeColor = resources.getColor(R.color.switchBgColor)
+        //msgLy.strokeColor = resources.getColor(R.color.switchBgColor)
     }
 
     private fun showError() {
         msgLy.visibility = View.VISIBLE
-        msgLy.strokeColor = resources.getColor(R.color.red)
+        //msgLy.strokeColor = resources.getColor(R.color.red)
         msgTitle.text = this.getString(R.string.sw_info4)
     }
 
@@ -195,7 +179,7 @@ class MainActivity : AppCompatActivity() {
     private fun setupBannerAd() {
         adView = newAppAdViewConditional(this,
             "792185624602570_794108871076912",
-            AdSize.RECTANGLE_HEIGHT_250,
+            AdSize.BANNER_HEIGHT_50,
             firebaseAnalytics,
             "BannerAdMainActiv")
         adView?.let { adView ->

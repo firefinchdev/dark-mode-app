@@ -2,19 +2,16 @@
 <resources>
     <color name="colorAccent">#ffffff</color>
 
-    <color name="colorPrimary">#27263a</color>
-    <color name="colorPrimaryDark">#27263a</color>
+    <color name="colorPrimary">#252431</color>
+    <color name="colorPrimaryDark">#252431</color>
 
     <color name="itemTextColor">#ffffff</color>
     <color name="titleTextColor">#ffffff</color>
-    <color name="appBg">#191920</color>
-    <color name="cardViewBg">#29253A</color>
-    <color name="headerViewBg">#27263a</color>
+    <color name="appBg">#252431</color>
+    <color name="cardViewBg">@color/blue_A400</color>
     <color name="selectedTxtColor">#ffffff</color>
-    <color name="unselectedTxtColor">#96969f</color>
-    <color name="unselectedBgColor">#4f486e</color>
-    <color name="menuText">@color/colorAccent</color>
-    <color name="headingTextColor">#ffffff</color>
-    <color name="switchBgColor">#5e9ff8</color>
+    <color name="selectedBgColor">#34323E</color>
+    <color name="unselectedTxtColor">@color/grey_700</color>
+    <color name="unselectedBgColor">#1D1C28</color>
     <color name="supported_apps_item_name_color">#ffffff</color>
 </resources>

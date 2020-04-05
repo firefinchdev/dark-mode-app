@@ -278,22 +278,15 @@
     <color name="grey_800">#424242</color>
     <color name="grey_900">#212121</color>
 
-
     <color name="supported_apps_item_name_color">#636b7b</color>
     <color name="itemTextColor">@color/grey_700</color>
     <color name="headingTextColor">#3e3a53</color>
     <color name="titleTextColor">#000000</color>
-    <color name="appBg">#F5F5F9</color>
-    <color name="cardViewBg">#E8EAF6</color>
-    <color name="headerViewBg">#ffffff</color>
-    <color name="selectedTxtColor">#ffffff</color>
-    <color name="unselectedTxtColor">#96969f</color>
-    <color name="unselectedBgColor">#ffffff</color>
-    <color name="menuIcon">#96969f</color>
-    <color name="menuText">#353147</color>
-    <color name="switchBgColor">#ff9359</color>
+    <color name="appBg">@color/white</color>
+    <color name="cardViewBg">@color/orange_400</color>
+    <color name="selectedTxtColor">@color/black</color>
+    <color name="selectedBgColor">@color/white</color>
+    <color name="unselectedTxtColor">@color/grey_700</color>
+    <color name="unselectedBgColor">@color/grey_500</color>
     <color name="switchStroke">#c3c3cd</color>
-    <color name="txtGray">#96969f</color>
-    <color name="red">#ec5c62</color>
-    <color name="txtCol">#96969f</color>
 </resources>

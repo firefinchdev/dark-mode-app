@@ -2,30 +2,39 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:aapt="http://schemas.android.com/aapt"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/cardViewBg"
+    android:background="@color/appBg"
     android:orientation="vertical">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        app:title=""
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/appBg"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+        android:layout_height="56dp"
+        android:orientation="horizontal">
 
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/toolbar_title"
+        <ImageView
+            android:tint="@color/titleTextColor"
+            android:src="@drawable/ic_arrow_back_black_24dp"
+            android:id="@+id/ic_back"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:scaleType="center"
+            />
+
+        <TextView
+            android:id="@+id/tvTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:fontFamily="@font/manropesemibold"
-            android:text="@string/info"
-            android:textColor="@color/headingTextColor"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-    </androidx.appcompat.widget.Toolbar>
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="16dp"
+            tools:text="@string/faq_title"
+            android:textColor="@color/titleTextColor"
+            android:textSize="20sp"
+            />
+    </LinearLayout>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -70,19 +79,19 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
-                            android:fontFamily="@font/manropesemibold"
+
                             android:text="@string/info7"
-                            android:textColor="@color/switchBgColor"
+                            android:textColor="@color/cardViewBg"
                             android:textSize="18sp" />
 
                         <com.google.android.material.textview.MaterialTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
-                            android:fontFamily="@font/manropesemibold"
+
                             android:text="@string/info8"
                             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                            android:textColor="@color/txtGray" />
+                            android:textColor="@color/grey_700" />
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -98,17 +107,17 @@
                                 <com.google.android.material.textview.MaterialTextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:fontFamily="@font/manropesemibold"
+
                                     android:text="@string/no"
-                                    android:textColor="@color/txtGray" />
+                                    android:textColor="@color/grey_700" />
 
                                 <com.google.android.material.textview.MaterialTextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:fontFamily="@font/manropesemibold"
+
                                     android:text="@string/info10"
                                     android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
-                                    android:textColor="@color/txtGray" />
+                                    android:textColor="@color/grey_700" />
                             </LinearLayout>
 
                             <LinearLayout
@@ -118,16 +127,16 @@
                                 <com.google.android.material.textview.MaterialTextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:fontFamily="@font/manropesemibold"
+
                                     android:text="@string/nu"
-                                    android:textColor="@color/txtGray" />
+                                    android:textColor="@color/grey_700" />
 
                                 <com.google.android.material.textview.MaterialTextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:fontFamily="@font/manropesemibold"
+
                                     android:text="@string/info9"
-                                    android:textColor="@color/txtGray" />
+                                    android:textColor="@color/grey_700" />
                             </LinearLayout>
 
                             <LinearLayout
@@ -137,16 +146,16 @@
                                 <com.google.android.material.textview.MaterialTextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:fontFamily="@font/manropesemibold"
+
                                     android:text="@string/num"
-                                    android:textColor="@color/txtGray" />
+                                    android:textColor="@color/grey_700" />
 
                                 <com.google.android.material.textview.MaterialTextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:fontFamily="@font/manropesemibold"
+
                                     android:text="@string/info11"
-                                    android:textColor="@color/txtGray" />
+                                    android:textColor="@color/grey_700" />
                             </LinearLayout>
                         </LinearLayout>
                     </LinearLayout>
@@ -177,19 +186,19 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
-                            android:fontFamily="@font/manropesemibold"
+
                             android:text="@string/not_work"
-                            android:textColor="@color/switchBgColor"
+                            android:textColor="@color/cardViewBg"
                             android:textSize="18sp" />
 
                         <com.google.android.material.textview.MaterialTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
-                            android:fontFamily="@font/manropesemibold"
+
                             android:text="@string/dm_info5"
                             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                            android:textColor="@color/txtGray" />
+                            android:textColor="@color/grey_700" />
 
                         <com.google.android.material.button.MaterialButton
                             android:id="@+id/btn1"
@@ -198,11 +207,11 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="end"
                             android:layout_marginTop="10dp"
-                            android:fontFamily="@font/manropesemibold"
+
                             android:text="@string/faq"
                             android:textColor="@color/white"
                             android:textSize="13.5sp"
-                            app:backgroundTint="@color/switchBgColor"
+                            app:backgroundTint="@color/cardViewBg"
                             app:cornerRadius="18dp" />
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
@@ -240,27 +249,27 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
-                            android:fontFamily="@font/manropesemibold"
+
                             android:text="@string/info2"
-                            android:textColor="@color/switchBgColor"
+                            android:textColor="@color/cardViewBg"
                             android:textSize="18sp" />
 
                         <com.google.android.material.textview.MaterialTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
-                            android:fontFamily="@font/manropesemibold"
+
                             android:text="@string/dm_info3"
                             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                            android:textColor="@color/txtGray" />
+                            android:textColor="@color/grey_700" />
 
                         <com.google.android.material.textview.MaterialTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="20dp"
-                            android:fontFamily="@font/manropesemibold"
+
                             android:text="@string/fq"
-                            android:textColor="@color/txtGray" />
+                            android:textColor="@color/grey_700" />
 
                         <com.google.android.material.button.MaterialButton
                             android:id="@+id/btn2"
@@ -269,11 +278,11 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="end"
                             android:layout_marginTop="10dp"
-                            android:fontFamily="@font/manropesemibold"
+
                             android:text="@string/faq"
                             android:textColor="@color/white"
                             android:textSize="13.5sp"
-                            app:backgroundTint="@color/switchBgColor"
+                            app:backgroundTint="@color/cardViewBg"
                             app:cornerRadius="18dp" />
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
@@ -304,28 +313,28 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
-                            android:fontFamily="@font/manropesemibold"
+
                             android:text="@string/info1"
-                            android:textColor="@color/switchBgColor"
+                            android:textColor="@color/cardViewBg"
                             android:textSize="18sp" />
 
                         <com.google.android.material.textview.MaterialTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
-                            android:fontFamily="@font/manropesemibold"
+
                             android:text="@string/dm_info1"
                             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                            android:textColor="@color/txtGray" />
+                            android:textColor="@color/grey_700" />
 
                         <com.google.android.material.textview.MaterialTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
-                            android:fontFamily="@font/manropesemibold"
+
                             android:text="@string/setting"
                             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                            android:textColor="@color/txtGray" />
+                            android:textColor="@color/grey_700" />
 
                         <com.google.android.material.textview.MaterialTextView
                             android:layout_width="wrap_content"
@@ -334,7 +343,7 @@
                             android:padding="4dp"
                             android:text="@string/info_for_o"
                             android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
-                            android:textColor="@color/txtGray" />
+                            android:textColor="@color/grey_700" />
 
                         <com.google.android.material.textview.MaterialTextView
                             android:id="@+id/txt1"
@@ -354,7 +363,7 @@
                             android:padding="4dp"
                             android:text="@string/info_for_p"
                             android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
-                            android:textColor="@color/txtGray" />
+                            android:textColor="@color/grey_700" />
 
                         <com.google.android.material.textview.MaterialTextView
                             android:id="@+id/txt2"
@@ -374,7 +383,7 @@
                             android:padding="4dp"
                             android:text="@string/info_for_t"
                             android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
-                            android:textColor="@color/txtGray" />
+                            android:textColor="@color/grey_700" />
 
                         <com.google.android.material.textview.MaterialTextView
                             android:id="@+id/txt3"
@@ -393,12 +402,12 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="end"
                             android:layout_marginTop="10dp"
-                            android:fontFamily="@font/manropesemibold"
+
                             android:text="@string/open_settings"
                             android:textAllCaps="false"
                             android:textColor="@color/white"
                             android:textSize="13.5sp"
-                            app:backgroundTint="@color/switchBgColor"
+                            app:backgroundTint="@color/cardViewBg"
                             app:cornerRadius="18dp" />
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>

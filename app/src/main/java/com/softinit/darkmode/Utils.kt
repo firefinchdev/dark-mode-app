@@ -9,7 +9,6 @@ import android.content.res.Configuration
 import android.net.Uri
 import android.os.Build
 import android.view.View
-import androidx.core.content.ContextCompat.startActivity
 import com.softinit.darkmode.AppConstants.DEVELOPER_EMAIL
 
 object Utils {

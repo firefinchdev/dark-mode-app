@@ -21,17 +21,15 @@ class InformationActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_information)
-        setSupportActionBar(toolbar)
-        supportActionBar?.title = ""
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.setHomeButtonEnabled(true)
         when(intent?.getIntExtra("type", UI_MODE_NIGHT_UNDEFINED)){
             UI_MODE_NIGHT_YES -> {
+                tvTitle.text = "Success"
                 msgSuccess.visibility = View.VISIBLE
                 msgError.visibility = View.GONE
                 firebaseAnalytics.logEvent("InformationActivity:UI_MODE_NIGHT_YES")
             }
             UI_MODE_NIGHT_UNDEFINED -> {
+                tvTitle.text = "Error"
                 msgSuccess.visibility = View.GONE
                 msgError.visibility = View.VISIBLE
                 when {

@@ -88,4 +88,6 @@
     <string name="preference_first_start" translatable="false">key_preference_first_start</string>
     <string name="key_preference_dark_mode" translatable="false">key_preference_dark_theme_enabled</string>
     <string name="key_user_session_count" translatable="false">key_user_session_count</string>
+    <string name="dark">Night</string>
+    <string name="light">Day</string>
 </resources>

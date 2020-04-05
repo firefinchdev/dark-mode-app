@@ -11,8 +11,4 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
-    <style name="NavigationDrawerStyle">
-        <item name="android:textSize">15sp</item>
-        <item name="android:fontFamily">@font/manropesemibold</item>
-    </style>
 </resources>
