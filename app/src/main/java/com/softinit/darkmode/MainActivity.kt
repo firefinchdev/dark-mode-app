@@ -145,12 +145,15 @@ class MainActivity : AppCompatActivity() {
             UI_MODE_NIGHT_NO -> msgTitle.text = this.getString(R.string.sw_info2)
             else ->  msgTitle.text = this.getString(R.string.sw_info1)
         }
-        //msgLy.strokeColor = resources.getColor(R.color.switchBgColor)
+        ivResult.setImageDrawable(resources.getDrawable(R.drawable.ic_check_circle_black_24dp))
+        msgSubTitle.visibility = View.GONE
+        msgLy.strokeColor = resources.getColor(R.color.switchBgColor)
     }
 
     private fun showError() {
         msgLy.visibility = View.VISIBLE
-        //msgLy.strokeColor = resources.getColor(R.color.red)
+        msgSubTitle.visibility = View.VISIBLE
+        msgLy.strokeColor = resources.getColor(R.color.red)
         msgTitle.text = this.getString(R.string.sw_info4)
     }
 
