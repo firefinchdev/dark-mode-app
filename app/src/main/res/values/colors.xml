@@ -289,5 +289,7 @@
     <color name="unselectedTxtColor">@color/grey_700</color>
     <color name="unselectedBgColor">@color/grey_300</color>
     <color name="switchStroke">#c3c3cd</color>
+    <color name="switchThumb">@color/white</color>
     <color name="autoModeBgColor">@color/grey_500</color>
+    <color name="switchTrackUnselected">@color/grey_300</color>
 </resources>

@@ -16,4 +16,6 @@
     <color name="unselectedBgColor">#1D1C28</color>
     <color name="supported_apps_item_name_color">#ffffff</color>
     <color name="autoModeBgColor">#34323E</color>
+    <color name="switchThumb">@color/appBg</color>
+    <color name="switchTrackUnselected">@color/grey_400</color>
 </resources>

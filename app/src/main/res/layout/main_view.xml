@@ -62,33 +62,35 @@
                 app:cardCornerRadius="@dimen/margin_pre_medium"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content">
+
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:paddingStart="@dimen/margin_padding_xnormal"
-                    android:paddingEnd="@dimen/margin_padding_xnormal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:paddingStart="@dimen/margin_padding_xnormal"
+                    android:paddingEnd="@dimen/margin_padding_xnormal">
+
                     <TextView
+                        android:id="@+id/tvAutoMode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-medium"
+                        android:text="@string/auto_mode"
+                        android:textColor="@color/white"
                         android:textSize="@dimen/text_size_xxnormal"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        android:id="@+id/tvAutoMode"
-                        android:textColor="@color/white"
-                        app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        android:text="@string/auto_mode"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+                        app:layout_constraintTop_toTopOf="parent" />
+
                     <androidx.appcompat.widget.SwitchCompat
-                        android:checked="false"
                         android:id="@+id/switchAutoMode"
-                        app:track="@drawable/switch_track"
-                        android:thumb="@drawable/switch_thumb"
-                        android:layout_marginStart="@dimen/margin_small"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:thumbTint="@color/switch_thumb"
+                        app:trackTint="@color/switch_track" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
             <com.google.android.material.card.MaterialCardView
