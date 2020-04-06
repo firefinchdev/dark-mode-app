@@ -283,7 +283,7 @@
     <color name="headingTextColor">#3e3a53</color>
     <color name="titleTextColor">#000000</color>
     <color name="appBg">@color/white</color>
-    <color name="cardViewBg">@color/grey_200</color>
+    <color name="cardViewBg">@color/grey_50</color>
     <color name="selectedTxtColor">@color/white</color>
     <color name="selectedBgColor">@color/orange_400</color>
     <color name="unselectedTxtColor">@color/grey_700</color>

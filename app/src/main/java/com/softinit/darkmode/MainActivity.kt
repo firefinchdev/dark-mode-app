@@ -8,6 +8,8 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate.*
+import androidx.core.content.ContextCompat
+import androidx.core.widget.ImageViewCompat
 import com.facebook.ads.AdSize
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.llollox.androidtoggleswitch.widgets.ToggleSwitch
@@ -145,15 +147,16 @@ class MainActivity : AppCompatActivity() {
             UI_MODE_NIGHT_NO -> msgTitle.text = this.getString(R.string.sw_info2)
             else ->  msgTitle.text = this.getString(R.string.sw_info1)
         }
-        ivResult.setImageDrawable(resources.getDrawable(R.drawable.ic_check_circle_black_24dp))
+        ivResult.setImageDrawable(ContextCompat.getDrawable(this,R.drawable.ic_check_circle_black_24dp))
+        ivResult.setColorFilter(ContextCompat.getColor(this,R.color.green_400))
         msgSubTitle.visibility = View.GONE
-        msgLy.strokeColor = resources.getColor(R.color.switchBgColor)
+        msgLy.strokeColor = ContextCompat.getColor(this,R.color.green_200)
     }
 
     private fun showError() {
         msgLy.visibility = View.VISIBLE
         msgSubTitle.visibility = View.VISIBLE
-        msgLy.strokeColor = resources.getColor(R.color.red)
+        msgLy.strokeColor = ContextCompat.getColor(this,R.color.red_400)
         msgTitle.text = this.getString(R.string.sw_info4)
     }
 

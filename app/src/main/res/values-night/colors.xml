@@ -7,8 +7,9 @@
 
     <color name="itemTextColor">#ffffff</color>
     <color name="titleTextColor">#ffffff</color>
+    <color name="headingTextColor">@color/grey_100</color>
     <color name="appBg">#252431</color>
-    <color name="cardViewBg">@color/blue_A400</color>
+    <color name="cardViewBg">#34323E</color>
     <color name="selectedTxtColor">#ffffff</color>
     <color name="selectedBgColor">@color/blue_A400</color>
     <color name="unselectedTxtColor">@color/grey_700</color>
