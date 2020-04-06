@@ -4,18 +4,14 @@ import android.app.UiModeManager
 import android.content.Intent
 import android.content.res.Configuration
 import android.content.res.Configuration.*
-import android.os.Build
 import android.os.Bundle
-import android.view.Gravity
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate.*
-import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.facebook.ads.AdSize
 import com.google.firebase.analytics.FirebaseAnalytics
+import com.llollox.androidtoggleswitch.widgets.ToggleSwitch
 import com.softinit.darkmode.AppConstants.APP_RATE_DIALOG_INTERVAL
-import com.softinit.darkmode.AppConstants.PRIVACY_POLICY_URL
 import com.softinit.darkmode.AppPreferences.firstStart
 import com.softinit.darkmode.AppPreferences.isDarkThemeEnabled
 import com.softinit.darkmode.AppPreferences.userSessionCount
@@ -57,39 +53,44 @@ class MainActivity : AppCompatActivity() {
         ivFaq.setOnClickListener {
             startActivity(Intent(this,FaqActivity::class.java))
         }
-        /*btnDay.setOnClickListener {
-            if(switchAutoMode.isChecked) switchAutoMode.isChecked = false
-            setNightModeBtn(isNight = false)
-            uiModeManager?.nightMode = UiModeManager.MODE_NIGHT_NO
-            showError()
-        }
-        btnNight.setOnClickListener {
-            if(switchAutoMode.isChecked) switchAutoMode.isChecked = false
-            setNightModeBtn(isNight = true)
-            uiModeManager?.nightMode = UiModeManager.MODE_NIGHT_YES
-            showError()
+        toggleSwitch.onChangeListener = object : ToggleSwitch.OnChangeListener {
+            override fun onToggleSwitchChanged(position: Int) {
+                when(position){
+                    0 -> {
+                        if(switchAutoMode.isChecked) switchAutoMode.isChecked = false
+                        setNightModeBtn(isNight = false)
+                        uiModeManager?.nightMode = UiModeManager.MODE_NIGHT_NO
+                        showError()
+                    }
+                    1 -> {
+                        if(switchAutoMode.isChecked) switchAutoMode.isChecked = false
+                        setNightModeBtn(isNight = true)
+                        uiModeManager?.nightMode = UiModeManager.MODE_NIGHT_YES
+                        showError()
+                    }
+                }
+            }
         }
         switchAutoMode.setOnCheckedChangeListener { compoundButton, isChecked ->
             if(isChecked){
-                btnNight.isSelected = false
-                btnDay.isSelected = false
+                toggleSwitch.checkedPosition = -1
                 uiModeManager?.nightMode = UiModeManager.MODE_NIGHT_AUTO
             }
             else{
                 when(isUsingNightModeResources(this)){
                     NightMode.YES -> {
-                        btnNight.isSelected = true
+                        toggleSwitch.checkedPosition = 1
                         uiModeManager?.nightMode = UiModeManager.MODE_NIGHT_YES
                     }
                     NightMode.NO -> {
-                        btnDay.isSelected = true
+                        toggleSwitch.checkedPosition = 0
                         uiModeManager?.nightMode = UiModeManager.MODE_NIGHT_NO
                     }
                     NightMode.UNKNOWN -> showError()
                 }
             }
 //            showError()
-        }*/
+        }
         msgLy.setOnClickListener {
             val intent = Intent(this,InformationActivity::class.java)
             when(msgTitle.text){
@@ -109,12 +110,11 @@ class MainActivity : AppCompatActivity() {
         when (getCurrentNightMode()) {
             NightMode.NO -> setNightModeBtn(isNight = false)
             NightMode.YES -> setNightModeBtn(isNight = true)
-            /*NightMode.AUTO -> {
+            NightMode.AUTO -> {
                 switchAutoMode.isChecked = true
-                btnDay.isSelected = false
-                btnNight.isSelected = false
+                toggleSwitch.checkedPosition = -1
                 showSuccess(UI_MODE_NIGHT_UNDEFINED)
-            }*/
+            }
             NightMode.UNKNOWN -> {
                 showError()
             }
@@ -122,8 +122,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setNightModeBtn(isNight: Boolean){
-        /*btnNight.isSelected = isNight
-        btnDay.isSelected = !isNight*/
+        toggleSwitch.checkedPosition = if(isNight) 1 else 0
         showSuccess(if(isNight) UI_MODE_NIGHT_YES else UI_MODE_NIGHT_NO)
     }
 

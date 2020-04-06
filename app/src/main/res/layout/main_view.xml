@@ -38,7 +38,7 @@
                 android:id="@+id/toggleSwitch"
                 app:elevation="6dp"
                 app:toggleHeight="45dp"
-                app:toggleWidth="88dp"
+                app:toggleWidth="100dp"
                 android:textSize="@dimen/text_size_xxnormal"
                 app:borderRadius="@dimen/margin_pre_medium"
                 app:checkedTextColor="@color/selectedTxtColor"
@@ -53,23 +53,23 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cvAutoMode"
-                app:cardBackgroundColor="@color/cardViewBg"
+                app:cardBackgroundColor="@color/autoModeBgColor"
                 app:layout_constraintTop_toBottomOf="@id/toggleSwitch"
                 app:layout_constraintStart_toStartOf="@id/toggleSwitch"
                 app:layout_constraintEnd_toEndOf="@id/toggleSwitch"
                 android:layout_marginTop="@dimen/margin_post_medium"
                 app:cardElevation="0dp"
                 app:cardCornerRadius="@dimen/margin_pre_medium"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content">
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:paddingStart="@dimen/margin_padding_xnormal"
                     android:paddingEnd="@dimen/margin_padding_xnormal"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <TextView
                         android:fontFamily="sans-serif-medium"
-                        android:textSize="@dimen/text_size_xnormal"
+                        android:textSize="@dimen/text_size_xxnormal"
                         app:layout_constraintBottom_toBottomOf="parent"
                         android:id="@+id/tvAutoMode"
                         android:textColor="@color/white"
@@ -80,12 +80,13 @@
                         android:layout_height="wrap_content"/>
                     <androidx.appcompat.widget.SwitchCompat
                         android:checked="false"
+                        android:id="@+id/switchAutoMode"
                         app:track="@drawable/switch_track"
                         android:thumb="@drawable/switch_thumb"
                         android:layout_marginStart="@dimen/margin_small"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintStart_toEndOf="@id/tvAutoMode"
+                        app:layout_constraintEnd_toEndOf="parent"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -97,6 +98,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:cardBackgroundColor="@color/appBg"
                 app:cardCornerRadius="15dp"
                 android:foreground="?selectableItemBackground"
@@ -121,6 +124,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text=""
+                        android:textAlignment="center"
+                        android:layout_gravity="center"
                         android:textColor="@color/headingTextColor"
                         android:textSize="14sp" />
 
@@ -129,6 +134,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
+                        android:textAlignment="center"
+                        android:layout_gravity="center"
                         android:text="@string/more_info"
                         android:textColor="@color/grey_700"
                         android:textSize="12sp" />
