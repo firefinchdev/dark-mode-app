@@ -29,7 +29,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <androidx.appcompat.widget.AppCompatImageView
+            <!--<androidx.appcompat.widget.AppCompatImageView
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:clickable="true"
                 android:id="@+id/ivFaq"
@@ -41,7 +41,7 @@
                 android:src="@drawable/help_icon"
                 app:layout_constraintBottom_toBottomOf="@id/tvTitle"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@id/tvTitle" />
+                app:layout_constraintTop_toTopOf="@id/tvTitle" />-->
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <ScrollView
@@ -60,4 +60,15 @@
             </LinearLayout>
         </ScrollView>
     </LinearLayout>
+
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-3940256099942544/6300978111">
+    </com.google.android.gms.ads.AdView>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

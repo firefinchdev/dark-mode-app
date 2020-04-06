@@ -8,6 +8,7 @@ import android.content.pm.PackageManager
 import android.content.res.Configuration
 import android.net.Uri
 import android.os.Build
+import android.util.Log
 import android.view.View
 import com.softinit.darkmode.AppConstants.DEVELOPER_EMAIL
 
@@ -96,6 +97,15 @@ object Utils {
             Configuration.UI_MODE_NIGHT_NO -> NightMode.NO
             Configuration.UI_MODE_NIGHT_UNDEFINED -> NightMode.UNKNOWN
             else -> NightMode.UNKNOWN
+        }
+    }
+    fun showGoogleInterstitialAds(mInterstitialAd: com.google.android.gms.ads.InterstitialAd?){
+        mInterstitialAd?.let {
+            if (it.isLoaded) {
+                it.show()
+            } else {
+                Log.d("TAG", "The interstitial wasn't loaded yet.")
+            }
         }
     }
 }

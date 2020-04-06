@@ -10,7 +10,7 @@ class FaqActivity : AppCompatActivity() {
 
     lateinit var faqDetailsAdapter: FaqDetailsAdapter
     var hashMap: HashMap<String, List<String>> = hashMapOf()
-    private var appInterstitialAd: AppInterstitialAd? = null
+    //private var appInterstitialAd: AppInterstitialAd? = null
     val firebaseAnalytics by lazy {
         FirebaseAnalytics.getInstance(this)
     }
@@ -28,21 +28,21 @@ class FaqActivity : AppCompatActivity() {
         ic_back.setOnClickListener {
             onBackPressed()
         }
-        appInterstitialAd = newAppInterstitialAdConditional(this,
+        /*appInterstitialAd = newAppInterstitialAdConditional(this,
             "792185624602570_792196721268127",
             firebaseAnalytics,
             "AdFaqActivity",
             showInterval = 3,
             destroyOnDismiss = true
-        )
+        )*/
         Utils.setStatusBarIconsColor(this)
     }
     override fun onBackPressed() {
-        appInterstitialAd?.showIfValidLoadedInterval()
+        //appInterstitialAd?.showIfValidLoadedInterval()
         finish()
     }
     override fun onDestroy() {
-        appInterstitialAd?.destroy()
+        //appInterstitialAd?.destroy()
         super.onDestroy()
     }
 }

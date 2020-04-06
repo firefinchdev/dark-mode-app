@@ -92,4 +92,6 @@
     <string name="light">Day</string>
     <string name="success">Success</string>
     <string name="error">Error</string>
+    <string name="key_theme_change_count" translatable="false">key_theme_change_count</string>
+    <string name="key_exit_info_count">key_exit_info_count</string>
 </resources>

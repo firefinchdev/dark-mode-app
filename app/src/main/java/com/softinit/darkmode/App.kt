@@ -2,7 +2,7 @@ package com.softinit.darkmode
 
 import android.app.Application
 import android.content.res.Resources
-import com.facebook.ads.AudienceNetworkAds
+import com.google.android.gms.ads.MobileAds
 import java.io.File
 
 
@@ -27,12 +27,9 @@ class App: Application(){
 
     override fun onCreate() {
         super.onCreate()
-        if (AudienceNetworkAds.isInAdsProcess(this)) {
-            return
-        }
         mInstance = this
         res = resources
-        AudienceNetworkAds.initialize(this)
+        MobileAds.initialize(this)
     }
 
 }

@@ -9,15 +9,15 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate.*
 import androidx.core.content.ContextCompat
-import com.facebook.ads.AdSize
+import com.google.android.gms.ads.*
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.softinit.darkmode.AppConstants.APP_RATE_DIALOG_INTERVAL
+import com.softinit.darkmode.AppConstants.THEME_SWITCH_AD_INTERVAL
 import com.softinit.darkmode.AppPreferences.firstStart
 import com.softinit.darkmode.AppPreferences.isDarkThemeEnabled
 import com.softinit.darkmode.AppPreferences.userSessionCount
 import com.softinit.darkmode.Utils.isUsingNightModeResources
 import com.softinit.darkmode.Utils.setStatusBarIconsColor
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.main_view.*
 
 
@@ -25,8 +25,7 @@ import kotlinx.android.synthetic.main.main_view.*
 class MainActivity : AppCompatActivity() {
 
     private var uiModeManager: UiModeManager?=null
-    private var appInterstitialAd: AppInterstitialAd? = null
-    private var adView: AppAdView? = null
+    private var mInterstitialAd: InterstitialAd? = null
     val firebaseAnalytics by lazy {
         FirebaseAnalytics.getInstance(this)
     }
@@ -36,33 +35,33 @@ class MainActivity : AppCompatActivity() {
         uiModeManager = getSystemService(UI_MODE_SERVICE) as UiModeManager
         initiateLayout()
         setupBannerAd()
-        setNewInstanceInterstitialAd()
+        setupInterstitialAd()
     }
 
     override fun onResume() {
         super.onResume()
-        appInterstitialAd?.showIfValidLoadedInterval()
     }
 
     override fun onDestroy() {
-        appInterstitialAd?.destroy()
         super.onDestroy()
     }
 
     fun initiateLayout(){
-        ivFaq.setOnClickListener {
-            startActivity(Intent(this,FaqActivity::class.java))
-        }
+//        ivFaq.setOnClickListener {
+//            startActivity(Intent(this,FaqActivity::class.java))
+//        }
         toggleSwitch.addOnButtonCheckedListener { group, checkedId, isChecked ->
             if(isChecked)
             when(checkedId){
                 R.id.btnDay -> {
+                    showAd()
                     if(switchAutoMode.isChecked) switchAutoMode.isChecked = false
                     setNightModeBtn(isNight = false)
                     uiModeManager?.nightMode = UiModeManager.MODE_NIGHT_NO
                     showError()
                 }
                 R.id.btnNight -> {
+                    showAd()
                     if(switchAutoMode.isChecked) switchAutoMode.isChecked = false
                     setNightModeBtn(isNight = true)
                     uiModeManager?.nightMode = UiModeManager.MODE_NIGHT_YES
@@ -72,6 +71,7 @@ class MainActivity : AppCompatActivity() {
         }
         switchAutoMode.setOnCheckedChangeListener { compoundButton, isChecked ->
             if(isChecked){
+                showAd()
                 uiModeManager?.nightMode = UiModeManager.MODE_NIGHT_AUTO
                 toggleSwitch.clearChecked()
             }
@@ -163,28 +163,23 @@ class MainActivity : AppCompatActivity() {
             else -> NightMode.UNKNOWN
         }
     }
-    private fun setNewInstanceInterstitialAd() {
-        appInterstitialAd = newAppInterstitialAdConditional(
-            this,
-            "792185624602570_792186791269120",
-            firebaseAnalytics,
-            "AdMainActivity",
-            showInterval = 5
-        ).also {
-            it?.onDismiss = {
-                setNewInstanceInterstitialAd()
-            }
-        }
-    }
+
     private fun setupBannerAd() {
-        adView = newAppAdViewConditional(this,
-            "792185624602570_794108871076912",
-            AdSize.BANNER_HEIGHT_50,
-            firebaseAnalytics,
-            "BannerAdMainActiv")
-        adView?.let { adView ->
-            bannerContainer.addView(adView)
-            adView.loadAd()
+        val adRequest = AdRequest.Builder().build()
+        val adView = AdView(this)
+        adView.adSize = AdSize.LARGE_BANNER
+        adView.adUnitId = "ca-app-pub-3940256099942544/6300978111"
+        adView.loadAd(adRequest)
+    }
+    private fun setupInterstitialAd() {
+        mInterstitialAd = InterstitialAd(this)
+        mInterstitialAd?.adUnitId = "ca-app-pub-3940256099942544/1033173712"
+        mInterstitialAd?.loadAd(AdRequest.Builder().build())
+    }
+    private fun showAd(){
+        AppPreferences.themeChangeCount += 1
+        if(AppPreferences.themeChangeCount % THEME_SWITCH_AD_INTERVAL == 0){
+            Utils.showGoogleInterstitialAds(mInterstitialAd)
         }
     }
 }

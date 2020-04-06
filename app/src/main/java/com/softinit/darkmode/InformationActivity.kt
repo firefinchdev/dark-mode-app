@@ -8,7 +8,10 @@ import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.InterstitialAd
 import com.google.firebase.analytics.FirebaseAnalytics
+import com.softinit.darkmode.AppConstants.EXIT_INFO_AD_INTERVAL
 import com.softinit.darkmode.Utils.openBrowser
 import kotlinx.android.synthetic.main.activity_information.*
 import java.lang.Exception
@@ -16,13 +19,14 @@ import java.lang.Exception
 
 class InformationActivity : AppCompatActivity() {
 
-    private var appInterstitialAd: AppInterstitialAd? = null
+    private var mInterstitialAd: InterstitialAd? = null
     val firebaseAnalytics by lazy {
         FirebaseAnalytics.getInstance(this)
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_information)
+        setupInterstitialAd()
         when(intent?.getIntExtra("type", UI_MODE_NIGHT_UNDEFINED)){
             UI_MODE_NIGHT_YES -> {
                 tvTitle.text = getString(R.string.success)
@@ -45,8 +49,15 @@ class InformationActivity : AppCompatActivity() {
         }
         Utils.setStatusBarIconsColor(this)
     }
+    private fun setupInterstitialAd() {
+        mInterstitialAd = InterstitialAd(this)
+        mInterstitialAd?.adUnitId = "ca-app-pub-3940256099942544/1033173712"
+        mInterstitialAd?.loadAd(AdRequest.Builder().build())
+    }
     override fun onBackPressed() {
-        appInterstitialAd?.showIfValidLoadedInterval()
+        if((AppPreferences.exitInfoCount)%(EXIT_INFO_AD_INTERVAL) == 0){
+            Utils.showGoogleInterstitialAds(mInterstitialAd)
+        }
         finish()
     }
 }

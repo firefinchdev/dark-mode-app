@@ -14,4 +14,8 @@ object AppPreferences: AppPref() {
             by Boolean(res.getString(R.string.key_preference_dark_mode), false)
 
     var userSessionCount by Int(res.getString(R.string.key_user_session_count),1)
+
+    var themeChangeCount by Int(res.getString(R.string.key_theme_change_count),0)
+
+    var exitInfoCount by Int(res.getString(R.string.key_exit_info_count),0)
 }
