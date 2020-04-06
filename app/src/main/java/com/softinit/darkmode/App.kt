@@ -29,7 +29,7 @@ class App: Application(){
         super.onCreate()
         mInstance = this
         res = resources
-        MobileAds.initialize(this)
+        MobileAds.initialize(mInstance)
     }
 
 }

@@ -167,7 +167,7 @@ class MainActivity : AppCompatActivity() {
     private fun setupBannerAd() {
         val adRequest = AdRequest.Builder().build()
         val adView = AdView(this)
-        adView.adSize = AdSize.LARGE_BANNER
+        adView.adSize = AdSize.BANNER
         adView.adUnitId = "ca-app-pub-3940256099942544/6300978111"
         adView.loadAd(adRequest)
     }
@@ -180,6 +180,7 @@ class MainActivity : AppCompatActivity() {
         AppPreferences.themeChangeCount += 1
         if(AppPreferences.themeChangeCount % THEME_SWITCH_AD_INTERVAL == 0){
             Utils.showGoogleInterstitialAds(mInterstitialAd)
+            mInterstitialAd?.loadAd(AdRequest.Builder().build())
         }
     }
 }
