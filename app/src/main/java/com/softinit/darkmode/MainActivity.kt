@@ -73,17 +73,17 @@ class MainActivity : AppCompatActivity() {
         }
         switchAutoMode.setOnCheckedChangeListener { compoundButton, isChecked ->
             if(isChecked){
-                toggleSwitch.checkedPosition = -1
+                toggleSwitch.setCheckedPosition(-1)
                 uiModeManager?.nightMode = UiModeManager.MODE_NIGHT_AUTO
             }
             else{
                 when(isUsingNightModeResources(this)){
                     NightMode.YES -> {
-                        toggleSwitch.checkedPosition = 1
+                        toggleSwitch.setCheckedPosition(1)
                         uiModeManager?.nightMode = UiModeManager.MODE_NIGHT_YES
                     }
                     NightMode.NO -> {
-                        toggleSwitch.checkedPosition = 0
+                        toggleSwitch.setCheckedPosition(0)
                         uiModeManager?.nightMode = UiModeManager.MODE_NIGHT_NO
                     }
                     NightMode.UNKNOWN -> showError()
@@ -112,7 +112,7 @@ class MainActivity : AppCompatActivity() {
             NightMode.YES -> setNightModeBtn(isNight = true)
             NightMode.AUTO -> {
                 switchAutoMode.isChecked = true
-                toggleSwitch.checkedPosition = -1
+                toggleSwitch.setCheckedPosition(-1)
                 showSuccess(UI_MODE_NIGHT_UNDEFINED)
             }
             NightMode.UNKNOWN -> {
@@ -122,7 +122,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setNightModeBtn(isNight: Boolean){
-        toggleSwitch.checkedPosition = if(isNight) 1 else 0
+        toggleSwitch.setCheckedPosition(if(isNight) 1 else 0)
         showSuccess(if(isNight) UI_MODE_NIGHT_YES else UI_MODE_NIGHT_NO)
     }
 
