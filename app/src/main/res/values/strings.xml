@@ -32,21 +32,21 @@
     <string name="app_share" translatable="false">Try Dark Mode for your Phone \n\nDark Mode Support All Social Media Apps \nhttps://play.google.com/store/apps/details?id=com.softinit.darkmode</string>
     <string name="dm_info1">In some cases, phone manufacturers have added a dark mode toggle into the system settings.</string>
     <string name="dm_info2">The Desk Mode can be activated by placing the phone in a desk dock.</string>
-    <string name="dm_info3">Some phone manufacturers have deactivated or changed the behavior of the Android dark mode on their devices. Because of this, the Dark Mode app can\'t activate the dark mode on your phone.</string>
+    <string name="dm_info3">Dark mode app will not work on all devices since some smartphone manufacturers disabled or blocked this option for their devices!</string>
     <string name="dm_info4">To get the dark mode on older Android phones (up to Android 5.1 - Lollipop), you sometimes have to activate one of the following modes.</string>
     <string name="dm_info5">The FAQ answers the most commonly asked questions.</string>
     <string name="info">Information</string>
     <string name="info1">Is there another option to activate the dark mode?</string>
-    <string name="info10">Your eyes may relax.</string>
+    <string name="info10">Can significantly reduce power usage for devices with OLED display. That’s why some manufacturers enable Dark Theme as a part of the Battery Saver mode.</string>
     <string name="info11">You don\'t have to wait for Android 10 to get the dark mode!</string>
-    <string name="info2">What went wrong?</string>
+    <string name="info2">What\'s the problem?</string>
     <string name="info3">Why do I have to activate the Car Mode?</string>
     <string name="info4">Settings -&gt; Display -&gt; Advanced -&gt; Device Theme</string>
     <string name="info5">Settings -&gt; Display -&gt; Dark Theme</string>
     <string name="info6">Settings -&gt; System -&gt; Developer options -&gt; Night mode</string>
-    <string name="info7">Dark Mode is enabled. What next?</string>
-    <string name="info8">Now that the dark mode is enabled, you will have several benefits:</string>
-    <string name="info9">Your battery lasts longer.</string>
+    <string name="info7">Why is the Dark Theme important?</string>
+    <string name="info8">There are 3 major reasons:</string>
+    <string name="info9">Improves visibility for users with low vision and those who are sensitive to bright light.</string>
     <string name="other_apps">Other apps</string>
     <string name="faq_description">Frequently Asked Questions(FAQ) for the Dark Mode App.</string>
     <string name="faq_title">FAQ - Dark Mode</string>
@@ -63,9 +63,9 @@
     <string name="app_behaviour_weird_ques">App XYZ looks weird since activating the dark mode. What went wrong?</string>
     <string name="app_orange_tint_ques">My screen has an orange tint since activating the dark mode. Why is that?</string>
     <string name="updated_android_ques">I updated Android, but I cannot change the mode anymore. Why is that?</string>
-    <string name="no" translatable="false">1.</string>
-    <string name="nu" translatable="false">2.</string>
-    <string name="num" translatable="false">3.</string>
+    <string name="no" translatable="false">1. </string>
+    <string name="nu" translatable="false">2. </string>
+    <string name="num" translatable="false">3. </string>
     <string name="not_work">Something does not work?</string>
     <string name="faq">FAQ</string>
     <string name="fq">Learn more about this and similar issues in the FAQ.</string>
@@ -90,4 +90,6 @@
     <string name="key_user_session_count" translatable="false">key_user_session_count</string>
     <string name="dark">Night</string>
     <string name="light">Day</string>
+    <string name="success">Success</string>
+    <string name="error">Error</string>
 </resources>

@@ -279,7 +279,7 @@
     <color name="grey_900">#212121</color>
 
     <color name="supported_apps_item_name_color">#636b7b</color>
-    <color name="itemTextColor">@color/grey_700</color>
+    <color name="subtextColor">@color/grey_800</color>
     <color name="headingTextColor">#3e3a53</color>
     <color name="titleTextColor">#000000</color>
     <color name="appBg">@color/white</color>

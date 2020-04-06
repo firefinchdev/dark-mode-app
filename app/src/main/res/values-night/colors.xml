@@ -5,7 +5,7 @@
     <color name="colorPrimary">#252431</color>
     <color name="colorPrimaryDark">#252431</color>
 
-    <color name="itemTextColor">#ffffff</color>
+    <color name="subtextColor">@color/grey_100</color>
     <color name="titleTextColor">#ffffff</color>
     <color name="headingTextColor">@color/grey_100</color>
     <color name="appBg">#252431</color>

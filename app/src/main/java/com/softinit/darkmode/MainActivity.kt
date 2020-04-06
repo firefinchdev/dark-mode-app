@@ -149,13 +149,11 @@ class MainActivity : AppCompatActivity() {
         }
         ivResult.setImageDrawable(ContextCompat.getDrawable(this,R.drawable.ic_check_circle_black_24dp))
         ivResult.setColorFilter(ContextCompat.getColor(this,R.color.green_400))
-        msgSubTitle.visibility = View.GONE
         msgLy.strokeColor = ContextCompat.getColor(this,R.color.green_200)
     }
 
     private fun showError() {
         msgLy.visibility = View.VISIBLE
-        msgSubTitle.visibility = View.VISIBLE
         msgLy.strokeColor = ContextCompat.getColor(this,R.color.red_400)
         msgTitle.text = this.getString(R.string.sw_info4)
     }

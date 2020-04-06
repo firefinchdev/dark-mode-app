@@ -9,12 +9,14 @@ import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.analytics.FirebaseAnalytics
+import com.softinit.darkmode.Utils.openBrowser
 import kotlinx.android.synthetic.main.activity_information.*
 import java.lang.Exception
 
 
 class InformationActivity : AppCompatActivity() {
 
+    private var appInterstitialAd: AppInterstitialAd? = null
     val firebaseAnalytics by lazy {
         FirebaseAnalytics.getInstance(this)
     }
@@ -23,46 +25,28 @@ class InformationActivity : AppCompatActivity() {
         setContentView(R.layout.activity_information)
         when(intent?.getIntExtra("type", UI_MODE_NIGHT_UNDEFINED)){
             UI_MODE_NIGHT_YES -> {
-                tvTitle.text = "Success"
+                tvTitle.text = getString(R.string.success)
                 msgSuccess.visibility = View.VISIBLE
                 msgError.visibility = View.GONE
                 firebaseAnalytics.logEvent("InformationActivity:UI_MODE_NIGHT_YES")
             }
             UI_MODE_NIGHT_UNDEFINED -> {
-                tvTitle.text = "Error"
+                tvTitle.text = getString(R.string.error)
                 msgSuccess.visibility = View.GONE
                 msgError.visibility = View.VISIBLE
-                when {
-                    Build.VERSION.SDK_INT < 26 -> {
-                        msg_subLy.visibility = View.GONE
-                    }
-                    else -> msg_subLy.visibility = View.VISIBLE
-                }
                 firebaseAnalytics.logEvent("InformationActivity:UI_MODE_NIGHT_UNDEFINED")
             }
         }
-        btn1.setOnClickListener {
-            startActivity(Intent(this,FaqActivity::class.java))
+        ic_back.setOnClickListener {
+            onBackPressed()
         }
         btn2.setOnClickListener {
-            startActivity(Intent(this,FaqActivity::class.java))
-        }
-        btn3.setOnClickListener {
-            try {
-                if (Build.VERSION.SDK_INT >= 26) {
-                    startActivityForResult(Intent("android.settings.SETTINGS"), 0)
-                }
-            }
-            catch (e: Exception){
-                e.printStackTrace()
-            }
+            openBrowser(this,"https://darkmode.maju.systems/en-US/faq.html")
         }
         Utils.setStatusBarIconsColor(this)
     }
-    override fun onOptionsItemSelected(menuItem: MenuItem): Boolean {
-        if (menuItem.itemId == android.R.id.home) {
-            finish()
-        }
-        return super.onOptionsItemSelected(menuItem)
+    override fun onBackPressed() {
+        appInterstitialAd?.showIfValidLoadedInterval()
+        finish()
     }
 }
