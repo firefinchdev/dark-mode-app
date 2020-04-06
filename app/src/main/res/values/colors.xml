@@ -286,7 +286,7 @@
     <color name="cardViewBg">@color/grey_50</color>
     <color name="selectedTxtColor">@color/white</color>
     <color name="selectedBgColor">@color/orange_400</color>
-    <color name="unselectedTxtColor">@color/grey_700</color>
+    <color name="unselectedTxtColor">@color/grey_500</color>
     <color name="unselectedBgColor">@color/grey_300</color>
     <color name="switchStroke">#c3c3cd</color>
     <color name="switchThumb">@color/white</color>

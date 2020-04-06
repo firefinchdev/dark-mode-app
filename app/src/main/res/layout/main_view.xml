@@ -64,8 +64,6 @@
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnDay"
-                    app:strokeColor="@color/white"
-                    app:strokeWidth="2dp"
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
                     android:text="@string/light"
@@ -79,8 +77,6 @@
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnNight"
                     android:textAllCaps="false"
-                    app:strokeColor="@color/white"
-                    app:strokeWidth="2dp"
                     android:padding="@dimen/margin_pre_medium"
                     android:textSize="@dimen/text_size_xxnormal"
                     android:layout_height="wrap_content"

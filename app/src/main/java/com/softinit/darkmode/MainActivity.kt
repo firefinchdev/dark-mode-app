@@ -72,8 +72,8 @@ class MainActivity : AppCompatActivity() {
         }
         switchAutoMode.setOnCheckedChangeListener { compoundButton, isChecked ->
             if(isChecked){
-                toggleSwitch.clearChecked()
                 uiModeManager?.nightMode = UiModeManager.MODE_NIGHT_AUTO
+                toggleSwitch.clearChecked()
             }
             else{
                 when(isUsingNightModeResources(this)){
