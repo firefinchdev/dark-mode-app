@@ -26,10 +26,16 @@ android {
     }
     buildTypes {
         release {
+            resValue "string", "bannerad_mainactivity", "ca-app-pub-9547519124871929/2764851567"
+            resValue "string", "interstitialad_mainactivity", "ca-app-pub-9547519124871929/8046658908"
+            resValue "string", "interstitialad_exitinfoactivity", "ca-app-pub-9547519124871929/8755544848"
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         debug {
+            resValue "string", "bannerad_mainactivity", "ca-app-pub-3940256099942544/6300978111"
+            resValue "string", "interstitialad_mainactivity", "ca-app-pub-3940256099942544/1033173712"
+            resValue "string", "interstitialad_exitinfoactivity", "ca-app-pub-3940256099942544/1033173712"
             minifyEnabled false
             applicationIdSuffix ".debug"
             versionNameSuffix "-debug"
