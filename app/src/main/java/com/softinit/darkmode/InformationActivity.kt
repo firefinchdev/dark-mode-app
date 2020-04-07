@@ -51,7 +51,7 @@ class InformationActivity : AppCompatActivity() {
     }
     private fun setupInterstitialAd() {
         mInterstitialAd = InterstitialAd(this)
-        mInterstitialAd?.adUnitId = "ca-app-pub-3940256099942544/1033173712"
+        mInterstitialAd?.adUnitId = getString(R.string.interstitialad_exitinfoactivity)
         mInterstitialAd?.loadAd(AdRequest.Builder().build())
     }
     override fun onBackPressed() {

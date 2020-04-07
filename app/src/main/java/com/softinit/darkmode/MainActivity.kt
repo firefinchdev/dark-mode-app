@@ -168,12 +168,13 @@ class MainActivity : AppCompatActivity() {
         val adRequest = AdRequest.Builder().build()
         val adView = AdView(this)
         adView.adSize = AdSize.BANNER
-        adView.adUnitId = "ca-app-pub-3940256099942544/6300978111"
+        adView.adUnitId = getString(R.string.bannerad_mainactivity)
+        lladView.addView(adView)
         adView.loadAd(adRequest)
     }
     private fun setupInterstitialAd() {
         mInterstitialAd = InterstitialAd(this)
-        mInterstitialAd?.adUnitId = "ca-app-pub-3940256099942544/1033173712"
+        mInterstitialAd?.adUnitId = getString(R.string.interstitialad_mainactivity)
         mInterstitialAd?.loadAd(AdRequest.Builder().build())
     }
     private fun showAd(){
