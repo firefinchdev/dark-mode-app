@@ -1,0 +1,97 @@
+<resources>
+    <string name="app_name">របៀបងងឹត</string>
+
+    <string name="day_mode">របៀបថ្ងៃ</string>
+    <string name="supported_apps">កម្មវិធីគាំទ្ររបៀបងងឹត</string>
+    <string name="night_mode">របៀបរាត្រី</string>
+    <string name="auto_desc">របៀបងងឹតដោយស្វ័យប្រវត្តិនៅពេលយប់។</string>
+    <string name="auto_mode">របៀបស្វ័យប្រវត្តិ</string>
+    <string name="day">ថ្ងៃ</string>
+    <string name="night">រាត្រី</string>
+    <string name="more_apps">កម្មវិធី​ច្រើន​ទៀត</string>
+    <string name="rate_this_app">វាយតម្លៃកម្មវិធីនេះ</string>
+    <string name="rate_app">វាយតម្លៃកម្មវិធីនេះ</string>
+    <string name="rate_later">ក្រោយមកទៀត</string>
+    <string name="rate_never">មិនដែល</string>
+    <string name="rate_us">វាយតម្លៃយើង</string>
+    <string name="terms_amp_conditions" translatable="false">TERMS &amp; CONDITIONS</string>
+    <string name="rateUs">សូមវាយតម្លៃយើងនៅលើ Play Store</string>
+    <string name="send_feedback">សូមផ្ញើមតិត្រឡប់ដោយប្រើអ៊ីម៉ែល។ យើងនឹងធ្វើការលើវា!</string>
+    <string name="share_with_friends">ចែករំលែកជាមួយមិត្តភក្តិ</string>
+    <string name="feedback">មតិប្រតិកម្ម</string>
+    <string name="faaq">ហ្វាក់</string>
+    <string name="privacy_policy">គោលការណ៍​ភាព​ឯកជន</string>
+    <string name="open_source">ប្រភព​បើក​ចំហ</string>
+    <string name="about_us">អំពី​ពួក​យើង</string>
+    <string name="connect_with_us">ភ្ជាប់ទំនាក់ទំនងជាមួយយើង</string>
+    <string name="more_info">ប៉ះដើម្បីដឹងបន្ថែម។</string>
+    <string name="sw_info1">អ្នកបានប្តូរទៅរបៀបស្វ័យប្រវត្តិ។</string>
+    <string name="sw_info2">អ្នកបានប្តូរទៅរបៀបថ្ងៃ។</string>
+    <string name="sw_info3">អ្នកបានប្តូរទៅរបៀបពេលយប់។</string>
+    <string name="sw_info4">ទូរស័ព្ទរបស់អ្នកមិនគាំទ្ររបៀបងងឹត Android ទេ</string>
+    <string name="app_share" translatable="false">Try Dark Mode for your Phone \n\nDark Mode Support All Social Media Apps \nhttps://play.google.com/store/apps/details?id=com.softinit.darkmode</string>
+    <string name="dm_info1">ក្នុងករណីខ្លះក្រុមហ៊ុនផលិតទូរស័ព្ទបានបន្ថែមរបៀបបិទបើកងងឹតទៅក្នុងការកំណត់ប្រព័ន្ធ។</string>
+    <string name="dm_info2">របៀបតុអាចត្រូវបានធ្វើឱ្យសកម្មដោយដាក់ទូរស័ព្ទនៅលើតុចូល។</string>
+    <string name="dm_info3">កម្មវិធីរបៀបងងឹតនឹងមិនដំណើរការលើឧបករណ៍ទាំងអស់ទេចាប់តាំងពីក្រុមហ៊ុនផលិតស្មាតហ្វូនមួយចំនួនបានបិទឬរារាំងជម្រើសនេះសម្រាប់ឧបករណ៍របស់ពួកគេ!</string>
+    <string name="dm_info4">ដើម្បីទទួលបានរបៀបងងឹតនៅលើទូរស័ព្ទ Android ចាស់ (រហូតដល់ប្រព័ន្ធប្រតិបត្តិការ Android 5.1 - ឡូលីបពក) ពេលខ្លះអ្នកត្រូវធ្វើឱ្យរបៀបមួយក្នុងចំណោមរបៀបដូចខាងក្រោម។</string>
+    <string name="dm_info5">សំណួរដែលសួរជារឿយៗឆ្លើយសំណួរទូទៅបំផុត។</string>
+    <string name="info">ព័ត៌មាន</string>
+    <string name="info1">តើមានជម្រើសមួយទៀតដើម្បីធ្វើឱ្យរបៀបងងឹតសកម្មទេ?</string>
+    <string name="info10">អាចកាត់បន្ថយការប្រើប្រាស់ថាមពលយ៉ាងខ្លាំងសម្រាប់ឧបករណ៍ដែលមានអេក្រង់ OLED ។ នោះហើយជាមូលហេតុដែលក្រុមហ៊ុនផលិតមួយចំនួនបើកដំណើរការស្បែកខ្មៅដែលជាផ្នែកមួយនៃរបៀបសន្សំថ្ម។</string>
+    <string name="info11">អ្នកមិនចាំបាច់រង់ចាំ Android 10 ដើម្បីទទួលបានរបៀបងងឹតទេ!</string>
+    <string name="info2">មាន​បញ្ហា​អ្វី?</string>
+    <string name="info3">ហេតុអ្វីបានជាខ្ញុំត្រូវធ្វើដំនើរការរថយន្តរបៀបនេះ?</string>
+    <string name="info4">ការកំណត់ -&gt; បង្ហាញ -&gt; កម្រិតខ្ពស់ -&gt; ស្បែកឧបករណ៍</string>
+    <string name="info5">ការកំណត់ -&gt; បង្ហាញ -&gt; ស្បែកងងឹត</string>
+    <string name="info6">ការកំណត់ -&gt; ប្រព័ន្ធ -&gt; ជម្រើសអ្នកអភិវឌ្ឍន៍ -&gt; របៀបរាត្រី</string>
+    <string name="info7">ហេតុអ្វីបានជាស្បែកងងឹតមានសារៈសំខាន់?</string>
+    <string name="info8">មានហេតុផលធំ ៗ ចំនួន ៣៖</string>
+    <string name="info9">ធ្វើអោយប្រសើរឡើងនូវភាពមើលឃើញសម្រាប់អ្នកប្រើប្រាស់ដែលមានចក្ខុវិស័យទាបនិងអ្នកដែលងាយនឹងពន្លឺភ្លឺ។</string>
+    <string name="other_apps">កម្មវិធីផ្សេងទៀត</string>
+    <string name="faq_description">សំណួរដែលគេសួរញឹកញាប់ (សំណួរគេសួរញឹកញាប់) សម្រាប់កម្មវិធីរបៀបងងឹត។</string>
+    <string name="faq_title">សំណួរគេសួរញឹកញាប់ - របៀបងងឹត</string>
+    <string name="updating_miui_error_ques">ការធ្វើបច្ចុប្បន្នភាពពីមីអាយអាយ ១០ ទៅ ១១ បំបែករបៀបងងឹត។ តើមានអ្វីខុស?</string>
+    <string name="samsung_galaxy_error_ques">Samsung Galaxy របស់ខ្ញុំនៅតែប្តូរទៅរបៀបថ្ងៃវិញ។ តើ​ខ្ញុំ​អាច​ធ្វើអ្វី​បាន?</string>
+    <string name="app_not_working_ques">កម្មវិធីនេះមិនដំណើរការលើទូរស័ព្ទរបស់ខ្ញុំទេ។ តើមានអ្វីខុស?</string>
+    <string name="app_not_supported_ques">ហេតុអ្វីបានជាកម្មវិធី XYZ មិនត្រូវបានគាំទ្រ?</string>
+    <string name="which_apps_supported_ques">តើកម្មវិធីណាមួយត្រូវបានគាំទ្រ?</string>
+    <string name="instagram_error_ques">របៀបងងឹតគឺសកម្មប៉ុន្តែ Instagram នៅតែមានពន្លឺ។ ហេតុអ្វីបានជា​អញ្ចឹង?</string>
+    <string name="want_light_mode_back_ques">ខ្ញុំបានលុបកម្មវិធីចេញប៉ុន្តែទូរស័ព្ទខ្ញុំងងឹត។ តើខ្ញុំអាចទទួលបានរបៀបពន្លឺត្រឡប់មកវិញយ៉ាងដូចម្តេច?</string>
+    <string name="dark_mode_turnedoff_ques">របៀបងងឹតត្រូវបានបិទបន្ទាប់ពីពេលខ្លះ។ ហេតុអ្វីបានជា​អញ្ចឹង?</string>
+    <string name="auto_mode_ques">តើរបៀបស្វ័យប្រវត្តិគឺជាអ្វីហើយតើវាដំណើរការយ៉ាងដូចម្តេច?</string>
+    <string name="remove_ads_ques">គ្មាននរណាម្នាក់ចូលចិត្តការផ្សាយពាណិជ្ជកម្មទេ។ ហេតុអ្វីបានជាអ្នកបង្ហាញពួកគេហើយតើខ្ញុំអាចយកវាចេញដោយរបៀបណា?</string>
+    <string name="app_behaviour_weird_ques">កម្មវិធី XYZ មើលទៅចំលែកចាប់តាំងពីដំណើរការរបៀបងងឹត។ តើមានអ្វីខុស?</string>
+    <string name="app_orange_tint_ques">អេក្រង់របស់ខ្ញុំមានពណ៌ទឹកក្រូចចាប់តាំងពីដំណើរការរបៀបងងឹត។ ហេតុអ្វីបានជា​អញ្ចឹង?</string>
+    <string name="updated_android_ques">ខ្ញុំបានធ្វើបច្ចុប្បន្នភាពប្រព័ន្ធប្រតិបត្តិការ Android ប៉ុន្តែខ្ញុំមិនអាចផ្លាស់ប្តូររបៀបតទៅទៀតទេ។ ហេតុអ្វីបានជា​អញ្ចឹង?</string>
+    <string name="no" translatable="false">1. </string>
+    <string name="nu" translatable="false">2. </string>
+    <string name="num" translatable="false">3. </string>
+    <string name="not_work">អ្វីមួយមិនដំណើរការ?</string>
+    <string name="faq">សំណួរគេសួរញឹកញាប់</string>
+    <string name="fq">ស្វែងយល់បន្ថែមអំពីបញ្ហានេះនិងបញ្ហាស្រដៀងគ្នានៅក្នុងសំណួរគេសួរញឹកញាប់។</string>
+    <string name="setting">សាកល្បងហើយពិនិត្យការកំណត់ប្រព័ន្ធរបស់អ្នក៖</string>
+    <string name="info_for_o">ទីតាំងដែលអាចមាននៅលើប្រព័ន្ធប្រតិបត្តិការ Android 8 (Oreo)</string>
+    <string name="info_for_p">ទីតាំងដែលអាចមាននៅលើប្រព័ន្ធប្រតិបត្តិការ Android 9 (ចំណិត)</string>
+    <string name="info_for_t">ទីតាំងដែលអាចមាននៅលើប្រព័ន្ធប្រតិបត្តិការ Android 10</string>
+    <string name="open_settings">បើកការកំណត់</string>
+    <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
+    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
+    <string name="guide_title">របៀបងងឹតសកម្ម</string>
+    <string name="google_pay" translatable="false">Google Pay</string>
+    <string name="google_play" translatable="false">Google Play</string>
+    <string name="chrome" translatable="false">Chrome</string>
+    <string name="photos" translatable="false">Photos</string>
+    <string name="pocket_casts" translatable="false">Pocket Casts</string>
+    <string name="fitness" translatable="false">Google Fitness</string>
+    <string name="ms_launcher" translatable="false">Microsoft Launcher</string>
+    <string name="insgram" translatable="false">Instagram</string>
+    <string name="preference_first_start" translatable="false">key_preference_first_start</string>
+    <string name="key_preference_dark_mode" translatable="false">key_preference_dark_theme_enabled</string>
+    <string name="key_user_session_count" translatable="false">key_user_session_count</string>
+    <string name="dark">រាត្រី</string>
+    <string name="light">ថ្ងៃ</string>
+    <string name="success">ជោគជ័យ</string>
+    <string name="error">កំហុស</string>
+    <string name="key_theme_change_count" translatable="false">key_theme_change_count</string>
+    <string name="key_exit_info_count">key_exit_info_count</string>
+</resources>
