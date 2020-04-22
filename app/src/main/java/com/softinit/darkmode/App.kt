@@ -2,7 +2,7 @@ package com.softinit.darkmode
 
 import android.app.Application
 import android.content.res.Resources
-import com.google.android.gms.ads.MobileAds
+import com.facebook.ads.AudienceNetworkAds
 import java.io.File
 
 
@@ -29,7 +29,7 @@ class App: Application(){
         super.onCreate()
         mInstance = this
         res = resources
-        MobileAds.initialize(mInstance)
+        AudienceNetworkAds.initialize(this)
     }
 
 }

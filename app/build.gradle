@@ -15,26 +15,26 @@ android {
         applicationId "com.softinit.darkmode"
         minSdkVersion 22
         targetSdkVersion 29
-        versionCode 1_10_00_10_00
+        versionCode 1_20_00_10_00
         // 1 (versioning scheme)
         // 00 (major version)
         // 02 (minor version)
         // 05 (patch version)
         // 00 spare for betas/RCs
-        versionName "1.1.10"
+        versionName "1.2.10"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
-            resValue "string", "admob_id","ca-app-pub-9547519124871929~5391014901"
-            resValue "string", "bannerad_mainactivity", "ca-app-pub-9547519124871929/2764851567"
-            resValue "string", "interstitialad_mainactivity", "ca-app-pub-9547519124871929/8046658908"
-            resValue "string", "interstitialad_exitinfoactivity", "ca-app-pub-9547519124871929/8755544848"
-            minifyEnabled false
+            resValue "string", "bannerad_mainactivity", "161702958476592_161704638476424"
+            resValue "string", "interstitialad_mainactivity", "161702958476592_163830791597142"
+            resValue "string", "interstitialad_exitinfoactivity", "161702958476592_163831168263771"
+            minifyEnabled true
+            shrinkResources true
+            useProguard true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         debug {
-            resValue "string", "admob_id","ca-app-pub-3940256099942544~3347511713"
             resValue "string", "bannerad_mainactivity", "ca-app-pub-3940256099942544/6300978111"
             resValue "string", "interstitialad_mainactivity", "ca-app-pub-3940256099942544/1033173712"
             resValue "string", "interstitialad_exitinfoactivity", "ca-app-pub-3940256099942544/1033173712"
@@ -53,7 +53,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'com.google.android.gms:play-services-ads:19.0.1'
+    implementation 'com.facebook.android:audience-network-sdk:5.+'
     implementation 'com.google.android.material:material:1.1.0'
     implementation 'com.codemybrainsout.rating:ratingdialog:1.0.8'
     implementation 'androidx.core:core-ktx:1.2.0'
@@ -61,8 +61,6 @@ dependencies {
     implementation "com.google.firebase:firebase-analytics:$firebase_version"
     implementation "com.crashlytics.sdk.android:crashlytics:$crashytics_version"
     implementation "com.aliassadi:power-preference-lib:$power_preference_version"
-    implementation "androidx.preference:preference:$androidx_preference_version"
-    implementation "androidx.preference:preference-ktx:$preference_version"
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'

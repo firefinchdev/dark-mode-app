@@ -8,8 +8,7 @@ import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.InterstitialAd
+import com.facebook.ads.InterstitialAd
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.softinit.darkmode.AppConstants.EXIT_INFO_AD_INTERVAL
 import com.softinit.darkmode.Utils.openBrowser
@@ -26,7 +25,7 @@ class InformationActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_information)
-        setupInterstitialAd()
+        loadFacebookInterstitialAds()
         when(intent?.getIntExtra("type", UI_MODE_NIGHT_UNDEFINED)){
             UI_MODE_NIGHT_YES -> {
                 tvTitle.text = getString(R.string.success)
@@ -49,14 +48,13 @@ class InformationActivity : AppCompatActivity() {
         }
         Utils.setStatusBarIconsColor(this)
     }
-    private fun setupInterstitialAd() {
-        mInterstitialAd = InterstitialAd(this)
-        mInterstitialAd?.adUnitId = getString(R.string.interstitialad_exitinfoactivity)
-        mInterstitialAd?.loadAd(AdRequest.Builder().build())
+    private fun loadFacebookInterstitialAds(){
+        mInterstitialAd = InterstitialAd(this,getString(R.string.interstitialad_exitinfoactivity))
+        mInterstitialAd?.loadAd()
     }
     override fun onBackPressed() {
         if((AppPreferences.exitInfoCount)%(EXIT_INFO_AD_INTERVAL) == 0){
-            Utils.showGoogleInterstitialAds(mInterstitialAd)
+            Utils.showFacebookInterstitialAds(mInterstitialAd)
         }
         finish()
     }

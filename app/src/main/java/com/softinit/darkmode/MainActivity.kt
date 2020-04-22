@@ -1,14 +1,17 @@
 package com.softinit.darkmode
 
 import android.app.UiModeManager
+import android.content.Context
 import android.content.Intent
 import android.content.res.Configuration
 import android.content.res.Configuration.*
 import android.os.Bundle
 import android.view.View
+import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate.*
 import androidx.core.content.ContextCompat
+import com.facebook.ads.*
 import com.google.android.gms.ads.*
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.softinit.darkmode.AppConstants.APP_RATE_DIALOG_INTERVAL
@@ -24,19 +27,20 @@ import kotlinx.android.synthetic.main.main_view.*
 // onConfig changed wouldn't be called if you are try to set day mode on day mode and vice versa
 class MainActivity : AppCompatActivity() {
 
-    private var uiModeManager: UiModeManager?=null
-    private var mInterstitialAd: InterstitialAd? = null
+    private var uiModeManager: UiModeManager? = null
+    private var mAdView:AdView?=null
+    private var mInterstitialAd: InterstitialAd?=null
     val firebaseAnalytics by lazy {
         FirebaseAnalytics.getInstance(this)
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        MobileAds.initialize(this)
         uiModeManager = getSystemService(UI_MODE_SERVICE) as UiModeManager
         initiateLayout()
-        setupBannerAd()
-        setupInterstitialAd()
+        loadFacebookInterstitialAds()
+        showFacebookBannerAds(this, lladView, getString(R.string.bannerad_mainactivity))
     }
 
     override fun onResume() {
@@ -47,37 +51,36 @@ class MainActivity : AppCompatActivity() {
         super.onDestroy()
     }
 
-    fun initiateLayout(){
+    fun initiateLayout() {
 //        ivFaq.setOnClickListener {
 //            startActivity(Intent(this,FaqActivity::class.java))
 //        }
         toggleSwitch.addOnButtonCheckedListener { group, checkedId, isChecked ->
-            if(isChecked)
-            when(checkedId){
-                R.id.btnDay -> {
-                    showAd()
-                    if(switchAutoMode.isChecked) switchAutoMode.isChecked = false
-                    setNightModeBtn(isNight = false)
-                    uiModeManager?.nightMode = UiModeManager.MODE_NIGHT_NO
-                    showError()
+            if (isChecked)
+                when (checkedId) {
+                    R.id.btnDay -> {
+                        showAd()
+                        if (switchAutoMode.isChecked) switchAutoMode.isChecked = false
+                        setNightModeBtn(isNight = false)
+                        uiModeManager?.nightMode = UiModeManager.MODE_NIGHT_NO
+                        showError()
+                    }
+                    R.id.btnNight -> {
+                        showAd()
+                        if (switchAutoMode.isChecked) switchAutoMode.isChecked = false
+                        setNightModeBtn(isNight = true)
+                        uiModeManager?.nightMode = UiModeManager.MODE_NIGHT_YES
+                        showError()
+                    }
                 }
-                R.id.btnNight -> {
-                    showAd()
-                    if(switchAutoMode.isChecked) switchAutoMode.isChecked = false
-                    setNightModeBtn(isNight = true)
-                    uiModeManager?.nightMode = UiModeManager.MODE_NIGHT_YES
-                    showError()
-                }
-            }
         }
         switchAutoMode.setOnCheckedChangeListener { compoundButton, isChecked ->
-            if(isChecked){
+            if (isChecked) {
                 showAd()
                 uiModeManager?.nightMode = UiModeManager.MODE_NIGHT_AUTO
                 toggleSwitch.clearChecked()
-            }
-            else{
-                when(isUsingNightModeResources(this)){
+            } else {
+                when (isUsingNightModeResources(this)) {
                     NightMode.YES -> {
                         toggleSwitch.check(R.id.btnNight)
                         uiModeManager?.nightMode = UiModeManager.MODE_NIGHT_YES
@@ -92,21 +95,24 @@ class MainActivity : AppCompatActivity() {
 //            showError()
         }
         msgLy.setOnClickListener {
-            val intent = Intent(this,InformationActivity::class.java)
-            when(msgTitle.text){
-                getString(R.string.sw_info2),getString(R.string.sw_info3),getString(R.string.sw_info1) -> intent.putExtra("type",UI_MODE_NIGHT_YES)
-                getString(R.string.sw_info4) -> intent.putExtra("type",UI_MODE_NIGHT_UNDEFINED)
+            val intent = Intent(this, InformationActivity::class.java)
+            when (msgTitle.text) {
+                getString(R.string.sw_info2), getString(R.string.sw_info3), getString(R.string.sw_info1) -> intent.putExtra(
+                    "type",
+                    UI_MODE_NIGHT_YES
+                )
+                getString(R.string.sw_info4) -> intent.putExtra("type", UI_MODE_NIGHT_UNDEFINED)
             }
             startActivity(intent)
         }
         setInitialMode()
         setStatusBarIconsColor(this)
-        if(firstStart) firstStart = false
+        if (firstStart) firstStart = false
         userSessionCount += 1
         AppRatingDialog.getDialog(this, true).show()
     }
 
-    private fun setInitialMode(){
+    private fun setInitialMode() {
         when (getCurrentNightMode()) {
             NightMode.NO -> setNightModeBtn(isNight = false)
             NightMode.YES -> setNightModeBtn(isNight = true)
@@ -121,15 +127,15 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun setNightModeBtn(isNight: Boolean){
-        toggleSwitch.check(if(isNight) R.id.btnNight else R.id.btnDay)
-        showSuccess(if(isNight) UI_MODE_NIGHT_YES else UI_MODE_NIGHT_NO)
+    private fun setNightModeBtn(isNight: Boolean) {
+        toggleSwitch.check(if (isNight) R.id.btnNight else R.id.btnDay)
+        showSuccess(if (isNight) UI_MODE_NIGHT_YES else UI_MODE_NIGHT_NO)
     }
 
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)
         firebaseAnalytics.logEvent("onConfigurationChanged")
-        if(APP_RATE_DIALOG_INTERVAL == 0)
+        if (APP_RATE_DIALOG_INTERVAL == 0)
             APP_RATE_DIALOG_INTERVAL = 5
         when (newConfig.uiMode and UI_MODE_NIGHT_MASK) {
             UI_MODE_NIGHT_YES -> isDarkThemeEnabled = true
@@ -140,19 +146,24 @@ class MainActivity : AppCompatActivity() {
 
     private fun showSuccess(uiModeNight: Int) {
         msgLy.visibility = View.VISIBLE
-        when(uiModeNight){
+        when (uiModeNight) {
             UI_MODE_NIGHT_YES -> msgTitle.text = this.getString(R.string.sw_info3)
             UI_MODE_NIGHT_NO -> msgTitle.text = this.getString(R.string.sw_info2)
-            else ->  msgTitle.text = this.getString(R.string.sw_info1)
+            else -> msgTitle.text = this.getString(R.string.sw_info1)
         }
-        ivResult.setImageDrawable(ContextCompat.getDrawable(this,R.drawable.ic_check_circle_black_24dp))
-        ivResult.setColorFilter(ContextCompat.getColor(this,R.color.green_400))
-        msgLy.strokeColor = ContextCompat.getColor(this,R.color.green_200)
+        ivResult.setImageDrawable(
+            ContextCompat.getDrawable(
+                this,
+                R.drawable.ic_check_circle_black_24dp
+            )
+        )
+        ivResult.setColorFilter(ContextCompat.getColor(this, R.color.green_400))
+        msgLy.strokeColor = ContextCompat.getColor(this, R.color.green_200)
     }
 
     private fun showError() {
         msgLy.visibility = View.VISIBLE
-        msgLy.strokeColor = ContextCompat.getColor(this,R.color.red_400)
+        msgLy.strokeColor = ContextCompat.getColor(this, R.color.red_400)
         msgTitle.text = this.getString(R.string.sw_info4)
     }
 
@@ -165,31 +176,33 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun setupBannerAd() {
-        val adRequest = AdRequest.Builder().build()
-        val adView = AdView(this)
-        adView.adSize = AdSize.BANNER
-        adView.adUnitId = getString(R.string.bannerad_mainactivity)
-        lladView.addView(adView)
-        adView.loadAd(adRequest)
+    private fun showFacebookBannerAds(context: Context, container: LinearLayout, adUnitId: String) {
+        mAdView = AdView(
+            context,
+            adUnitId,
+            AdSize.BANNER_HEIGHT_50
+        )
+        container.addView(mAdView)
+        mAdView?.loadAd()
     }
-    private fun setupInterstitialAd() {
-        mInterstitialAd = InterstitialAd(this)
-        mInterstitialAd?.adUnitId = getString(R.string.interstitialad_mainactivity)
-        mInterstitialAd?.loadAd(AdRequest.Builder().build())
+
+    private fun loadFacebookInterstitialAds(){
+        mInterstitialAd = InterstitialAd(this,getString(R.string.interstitialad_mainactivity))
+        mInterstitialAd?.loadAd()
     }
-    private fun showAd(){
+
+    private fun showAd() {
         AppPreferences.themeChangeCount += 1
-        if(AppPreferences.themeChangeCount % THEME_SWITCH_AD_INTERVAL == 0){
-            Utils.showGoogleInterstitialAds(mInterstitialAd)
-            mInterstitialAd?.loadAd(AdRequest.Builder().build())
+        if (AppPreferences.themeChangeCount % THEME_SWITCH_AD_INTERVAL == 0) {
+            Utils.showFacebookInterstitialAds(mInterstitialAd)
+            mInterstitialAd?.loadAd()
         }
     }
 }
 
 sealed class NightMode {
-    object YES: NightMode()
-    object NO: NightMode()
-    object AUTO: NightMode()
-    object UNKNOWN: NightMode()
+    object YES : NightMode()
+    object NO : NightMode()
+    object AUTO : NightMode()
+    object UNKNOWN : NightMode()
 }
